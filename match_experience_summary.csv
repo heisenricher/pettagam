@@ -1,0 +1,75 @@
+match_number,team1,team2,team1_total_experience,team2_total_experience,team1_average_experience,team2_average_experience,experience_difference,winner,winner_experience_status
+1,Sunrisers Hyderabad,Royal Challengers Bengaluru,565,898,47.08,74.83,27.75,Royal Challengers Bengaluru,More
+2,Kolkata Knight Riders,Mumbai Indians,671,1110,55.92,92.5,36.58,Mumbai Indians,More
+3,Chennai Super Kings,Rajasthan Royals,517,1001,43.08,83.42,40.33,Rajasthan Royals,More
+4,Gujarat Titans,Punjab Kings,910,706,75.83,58.83,17,Punjab Kings,Less
+5,Lucknow Super Giants,Delhi Capitals,701,840,58.42,70,11.58,Delhi Capitals,More
+6,Sunrisers Hyderabad,Kolkata Knight Riders,458,683,38.17,56.92,18.75,Sunrisers Hyderabad,Less
+7,Chennai Super Kings,Punjab Kings,597,718,49.75,59.83,10.08,Punjab Kings,More
+8,Mumbai Indians,Delhi Capitals,977,852,81.42,71,10.42,Delhi Capitals,Less
+9,Rajasthan Royals,Gujarat Titans,865,807,72.08,67.25,4.83,Rajasthan Royals,More
+10,Sunrisers Hyderabad,Lucknow Super Giants,634,673,52.83,56.08,3.25,Lucknow Super Giants,More
+11,Royal Challengers Bengaluru,Chennai Super Kings,910,533,75.83,44.42,31.42,Royal Challengers Bengaluru,More
+12,Kolkata Knight Riders,Punjab Kings,703,739,58.58,61.58,3,No Result,N/A
+13,Rajasthan Royals,Mumbai Indians,877,1188,73.08,99,25.92,Rajasthan Royals,Less
+14,Gujarat Titans,Delhi Capitals,933,864,77.75,72,5.75,Gujarat Titans,More
+15,Kolkata Knight Riders,Lucknow Super Giants,678,685,56.5,57.08,0.58,Lucknow Super Giants,More
+16,Royal Challengers Bengaluru,Rajasthan Royals,991,842,82.58,70.17,12.42,Rajasthan Royals,Less
+17,Sunrisers Hyderabad,Punjab Kings,598,741,49.83,61.75,11.92,Punjab Kings,More
+18,Chennai Super Kings,Delhi Capitals,548,762,45.67,63.5,17.83,Chennai Super Kings,Less
+19,Lucknow Super Giants,Gujarat Titans,690,945,57.5,78.75,21.25,Gujarat Titans,More
+20,Royal Challengers Bengaluru,Mumbai Indians,942,1172,78.5,97.67,19.17,Royal Challengers Bengaluru,Less
+21,Sunrisers Hyderabad,Rajasthan Royals,373,810,31.08,67.5,36.42,Sunrisers Hyderabad,Less
+22,Chennai Super Kings,Kolkata Knight Riders,560,742,46.67,61.83,15.17,Chennai Super Kings,Less
+23,Lucknow Super Giants,Royal Challengers Bengaluru,702,991,58.5,82.58,24.08,Royal Challengers Bengaluru,More
+24,Mumbai Indians,Punjab Kings,927,742,77.25,61.83,15.42,Punjab Kings,Less
+25,Kolkata Knight Riders,Gujarat Titans,752,957,62.67,79.75,17.08,Gujarat Titans,More
+26,Royal Challengers Bengaluru,Delhi Capitals,1003,833,83.58,69.42,14.17,Delhi Capitals,Less
+27,Sunrisers Hyderabad,Chennai Super Kings,427,516,35.58,43,7.42,Sunrisers Hyderabad,Less
+28,Rajasthan Royals,Kolkata Knight Riders,723,764,60.25,63.67,3.42,Kolkata Knight Riders,More
+29,Punjab Kings,Lucknow Super Giants,764,662,63.67,55.17,8.5,Punjab Kings,More
+30,Mumbai Indians,Gujarat Titans,750,969,62.5,80.75,18.25,Mumbai Indians,Less
+31,Sunrisers Hyderabad,Delhi Capitals,394,904,32.83,75.33,42.5,Sunrisers Hyderabad,Less
+32,Rajasthan Royals,Lucknow Super Giants,747,609,62.25,50.75,11.5,Rajasthan Royals,More
+33,Chennai Super Kings,Mumbai Indians,513,721,42.75,60.08,17.33,Chennai Super Kings,Less
+34,Gujarat Titans,Royal Challengers Bengaluru,1008,977,84,81.42,2.58,Royal Challengers Bengaluru,Less
+35,Delhi Capitals,Punjab Kings,871,776,72.58,64.67,7.92,Punjab Kings,Less
+36,Rajasthan Royals,Sunrisers Hyderabad,794,470,66.17,39.17,27,Sunrisers Hyderabad,Less
+37,Chennai Super Kings,Gujarat Titans,510,867,42.5,72.25,29.75,Gujarat Titans,More
+38,Kolkata Knight Riders,Lucknow Super Giants,776,616,64.67,51.33,13.33,No Result,N/A
+39,Delhi Capitals,Royal Challengers Bengaluru,897,989,74.75,82.42,7.67,Royal Challengers Bengaluru,More
+40,Punjab Kings,Rajasthan Royals,808,596,67.33,49.67,17.67,Rajasthan Royals,Less
+41,Mumbai Indians,Sunrisers Hyderabad,861,484,71.75,40.33,31.42,Sunrisers Hyderabad,Less
+42,Royal Challengers Bengaluru,Gujarat Titans,1045,976,87.08,81.33,5.75,Gujarat Titans,Less
+43,Rajasthan Royals,Delhi Capitals,737,856,61.42,71.33,9.92,Delhi Capitals,More
+44,Mumbai Indians,Chennai Super Kings,754,474,62.83,39.5,23.33,Chennai Super Kings,Less
+45,Sunrisers Hyderabad,Kolkata Knight Riders,573,923,47.75,76.92,29.17,Kolkata Knight Riders,More
+46,Punjab Kings,Gujarat Titans,754,924,62.83,77,14.17,Gujarat Titans,More
+47,Lucknow Super Giants,Mumbai Indians,634,858,52.83,71.5,18.67,Mumbai Indians,More
+48,Delhi Capitals,Chennai Super Kings,894,612,74.5,51,23.5,Chennai Super Kings,Less
+49,Sunrisers Hyderabad,Punjab Kings,486,808,40.5,67.33,26.83,Sunrisers Hyderabad,Less
+50,Lucknow Super Giants,Royal Challengers Bengaluru,601,1012,50.08,84.33,34.25,Lucknow Super Giants,Less
+51,Delhi Capitals,Kolkata Knight Riders,802,935,66.83,77.92,11.08,Kolkata Knight Riders,More
+52,Gujarat Titans,Rajasthan Royals,956,654,79.67,54.5,25.17,Gujarat Titans,More
+53,Lucknow Super Giants,Chennai Super Kings,696,500,58,41.67,16.33,Chennai Super Kings,Less
+54,Mumbai Indians,Royal Challengers Bengaluru,870,1024,72.5,85.33,12.83,Royal Challengers Bengaluru,More
+55,Punjab Kings,Delhi Capitals,765,711,63.75,59.25,4.5,Delhi Capitals,Less
+56,Gujarat Titans,Sunrisers Hyderabad,1015,491,84.58,40.92,43.67,Gujarat Titans,More
+57,Kolkata Knight Riders,Royal Challengers Bengaluru,856,1036,71.33,86.33,15,Royal Challengers Bengaluru,More
+58,Punjab Kings,Mumbai Indians,668,838,55.67,69.83,14.17,Mumbai Indians,More
+59,Chennai Super Kings,Lucknow Super Giants,507,687,42.25,57.25,15,Lucknow Super Giants,More
+60,Kolkata Knight Riders,Gujarat Titans,911,979,75.92,81.58,5.67,Kolkata Knight Riders,Less
+61,Royal Challengers Bengaluru,Punjab Kings,1056,834,88,69.5,18.5,Royal Challengers Bengaluru,More
+62,Rajasthan Royals,Delhi Capitals,359,719,29.92,59.92,30,Delhi Capitals,More
+63,Chennai Super Kings,Sunrisers Hyderabad,519,503,43.25,41.92,1.33,Sunrisers Hyderabad,Less
+64,Lucknow Super Giants,Rajasthan Royals,604,407,50.33,33.92,16.42,Rajasthan Royals,Less
+65,Mumbai Indians,Kolkata Knight Riders,1044,925,87,77.08,9.92,Kolkata Knight Riders,Less
+66,Gujarat Titans,Chennai Super Kings,1038,532,86.5,44.33,42.17,Gujarat Titans,More
+67,Sunrisers Hyderabad,Royal Challengers Bengaluru,631,1113,52.58,92.75,40.17,Sunrisers Hyderabad,Less
+68,Lucknow Super Giants,Punjab Kings,611,816,50.92,68,17.08,Punjab Kings,More
+69,Rajasthan Royals,Mumbai Indians,647,1012,53.92,84.33,30.42,Rajasthan Royals,Less
+70,Delhi Capitals,Kolkata Knight Riders,803,904,66.92,75.33,8.42,Delhi Capitals,Less
+71,Royal Challengers Bengaluru,Gujarat Titans,1090,1033,90.83,86.08,4.75,Royal Challengers Bengaluru,More
+72,Rajasthan Royals,Sunrisers Hyderabad,640,513,53.33,42.75,10.58,Rajasthan Royals,More
+73,Gujarat Titans,Rajasthan Royals,1063,652,88.58,54.33,34.25,Gujarat Titans,More
+74,Royal Challengers Bengaluru,Gujarat Titans,1102,1072,91.83,89.33,2.5,Royal Challengers Bengaluru,More

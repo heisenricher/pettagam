@@ -1,0 +1,1777 @@
+match_number,team,player_name,career_ipl_matches_before_match
+1,Sunrisers Hyderabad,TM Head,38
+1,Sunrisers Hyderabad,Abhishek Sharma,77
+1,Sunrisers Hyderabad,Ishan Kishan,119
+1,Sunrisers Hyderabad,Nithish Kumar Reddy,28
+1,Sunrisers Hyderabad,H Klaasen,49
+1,Sunrisers Hyderabad,S Arora,0
+1,Sunrisers Hyderabad,Aniket Verma,14
+1,Sunrisers Hyderabad,Harsh Dubey,3
+1,Sunrisers Hyderabad,HV Patel,118
+1,Sunrisers Hyderabad,DA Payne,0
+1,Sunrisers Hyderabad,JD Unadkat,112
+1,Sunrisers Hyderabad,E Malinga,7
+1,Royal Challengers Bengaluru,JA Duffy,0
+1,Royal Challengers Bengaluru,PD Salt,34
+1,Royal Challengers Bengaluru,V Kohli,266
+1,Royal Challengers Bengaluru,D Padikkal,74
+1,Royal Challengers Bengaluru,RM Patidar,42
+1,Royal Challengers Bengaluru,JM Sharma,55
+1,Royal Challengers Bengaluru,TH David,50
+1,Royal Challengers Bengaluru,R Shepherd,18
+1,Royal Challengers Bengaluru,KH Pandya,142
+1,Royal Challengers Bengaluru,B Kumar,190
+1,Royal Challengers Bengaluru,Abhinandan Singh,0
+1,Royal Challengers Bengaluru,Suyash Sharma,27
+2,Kolkata Knight Riders,Kartik Tyagi,20
+2,Kolkata Knight Riders,AM Rahane,198
+2,Kolkata Knight Riders,FH Allen,0
+2,Kolkata Knight Riders,C Green,29
+2,Kolkata Knight Riders,A Raghuvanshi,22
+2,Kolkata Knight Riders,RK Singh,58
+2,Kolkata Knight Riders,Ramandeep Singh,30
+2,Kolkata Knight Riders,AS Roy,11
+2,Kolkata Knight Riders,SP Narine,188
+2,Kolkata Knight Riders,CV Varun,83
+2,Kolkata Knight Riders,VG Arora,32
+2,Kolkata Knight Riders,B Muzarabani,0
+2,Mumbai Indians,JJ Bumrah,145
+2,Mumbai Indians,RD Rickelton,14
+2,Mumbai Indians,RG Sharma,272
+2,Mumbai Indians,SA Yadav,166
+2,Mumbai Indians,Tilak Varma,54
+2,Mumbai Indians,HH Pandya,152
+2,Mumbai Indians,Naman Dhir,23
+2,Mumbai Indians,SE Rutherford,23
+2,Mumbai Indians,SN Thakur,105
+2,Mumbai Indians,M Markande,37
+2,Mumbai Indians,AM Ghazanfar,0
+2,Mumbai Indians,TA Boult,119
+3,Chennai Super Kings,SV Samson,176
+3,Chennai Super Kings,RD Gaikwad,71
+3,Chennai Super Kings,A Mhatre,7
+3,Chennai Super Kings,MW Short,6
+3,Chennai Super Kings,SN Khan,50
+3,Chennai Super Kings,Kartik Sharma,0
+3,Chennai Super Kings,S Dube,79
+3,Chennai Super Kings,J Overton,3
+3,Chennai Super Kings,Noor Ahmad,37
+3,Chennai Super Kings,MJ Henry,6
+3,Chennai Super Kings,A Kamboj,11
+3,Chennai Super Kings,KK Ahmed,71
+3,Rajasthan Royals,YBK Jaiswal,66
+3,Rajasthan Royals,V Suryavanshi,7
+3,Rajasthan Royals,Dhruv Jurel,41
+3,Rajasthan Royals,R Parag,83
+3,Rajasthan Royals,SO Hetmyer,86
+3,Rajasthan Royals,RA Jadeja,253
+3,Rajasthan Royals,JC Archer,52
+3,Rajasthan Royals,N Burger,5
+3,Rajasthan Royals,Sandeep Sharma,136
+3,Rajasthan Royals,Ravi Bishnoi,77
+3,Rajasthan Royals,Brijesh Sharma,0
+3,Rajasthan Royals,Rajasthan Royals Substitute 12,195
+4,Gujarat Titans,M Prasidh Krishna,66
+4,Gujarat Titans,B Sai Sudharsan,40
+4,Gujarat Titans,Shubman Gill,118
+4,Gujarat Titans,JC Buttler,121
+4,Gujarat Titans,GD Phillips,8
+4,Gujarat Titans,Washington Sundar,66
+4,Gujarat Titans,M Shahrukh Khan,55
+4,Gujarat Titans,R Tewatia,108
+4,Gujarat Titans,Rashid Khan,136
+4,Gujarat Titans,K Rabada,84
+4,Gujarat Titans,Ashok Sharma,0
+4,Gujarat Titans,Mohammed Siraj,108
+4,Punjab Kings,YS Chahal,175
+4,Punjab Kings,Priyansh Arya,18
+4,Punjab Kings,P Simran Singh,52
+4,Punjab Kings,C Connolly,0
+4,Punjab Kings,SS Iyer,133
+4,Punjab Kings,N Wadhera,37
+4,Punjab Kings,Shashank Singh,42
+4,Punjab Kings,MP Stoinis,110
+4,Punjab Kings,M Jansen,36
+4,Punjab Kings,XC Bartlett,4
+4,Punjab Kings,Vijaykumar Vyshak,16
+4,Punjab Kings,Arshdeep Singh,83
+5,Lucknow Super Giants,MR Marsh,55
+5,Lucknow Super Giants,RR Pant,125
+5,Lucknow Super Giants,AK Markram,57
+5,Lucknow Super Giants,A Badoni,56
+5,Lucknow Super Giants,N Pooran,90
+5,Lucknow Super Giants,Abdul Samad,63
+5,Lucknow Super Giants,MD Choudhary,0
+5,Lucknow Super Giants,Shahbaz Ahmed,58
+5,Lucknow Super Giants,Mohammed Shami,119
+5,Lucknow Super Giants,A Nortje,48
+5,Lucknow Super Giants,Mohsin Khan,24
+5,Lucknow Super Giants,Prince Yadav,6
+5,Delhi Capitals,T Natarajan,64
+5,Delhi Capitals,KL Rahul,146
+5,Delhi Capitals,P Nissanka,0
+5,Delhi Capitals,N Rana,118
+5,Delhi Capitals,Sameer Rizvi,14
+5,Delhi Capitals,AR Patel,163
+5,Delhi Capitals,T Stubbs,33
+5,Delhi Capitals,V Nigam,14
+5,Delhi Capitals,DA Miller,141
+5,Delhi Capitals,L Ngidi,16
+5,Delhi Capitals,Kuldeep Yadav,99
+5,Delhi Capitals,Mukesh Kumar,32
+6,Sunrisers Hyderabad,TM Head,39
+6,Sunrisers Hyderabad,Abhishek Sharma,78
+6,Sunrisers Hyderabad,Ishan Kishan,120
+6,Sunrisers Hyderabad,H Klaasen,50
+6,Sunrisers Hyderabad,Aniket Verma,15
+6,Sunrisers Hyderabad,Nithish Kumar Reddy,29
+6,Sunrisers Hyderabad,S Arora,1
+6,Sunrisers Hyderabad,Harsh Dubey,4
+6,Sunrisers Hyderabad,Shivang Kumar,0
+6,Sunrisers Hyderabad,JD Unadkat,113
+6,Sunrisers Hyderabad,DA Payne,1
+6,Sunrisers Hyderabad,E Malinga,8
+6,Kolkata Knight Riders,FH Allen,1
+6,Kolkata Knight Riders,AM Rahane,199
+6,Kolkata Knight Riders,A Raghuvanshi,23
+6,Kolkata Knight Riders,C Green,30
+6,Kolkata Knight Riders,RK Singh,59
+6,Kolkata Knight Riders,AS Roy,12
+6,Kolkata Knight Riders,Ramandeep Singh,31
+6,Kolkata Knight Riders,SP Narine,189
+6,Kolkata Knight Riders,Kartik Tyagi,21
+6,Kolkata Knight Riders,VG Arora,33
+6,Kolkata Knight Riders,CV Varun,84
+6,Kolkata Knight Riders,B Muzarabani,1
+7,Chennai Super Kings,RD Chahar,79
+7,Chennai Super Kings,SV Samson,177
+7,Chennai Super Kings,RD Gaikwad,72
+7,Chennai Super Kings,A Mhatre,8
+7,Chennai Super Kings,S Dube,80
+7,Chennai Super Kings,Kartik Sharma,1
+7,Chennai Super Kings,SN Khan,51
+7,Chennai Super Kings,PR Veer,0
+7,Chennai Super Kings,Noor Ahmad,38
+7,Chennai Super Kings,A Kamboj,12
+7,Chennai Super Kings,MJ Henry,7
+7,Chennai Super Kings,KK Ahmed,72
+7,Punjab Kings,YS Chahal,176
+7,Punjab Kings,Priyansh Arya,19
+7,Punjab Kings,P Simran Singh,53
+7,Punjab Kings,C Connolly,1
+7,Punjab Kings,SS Iyer,134
+7,Punjab Kings,N Wadhera,38
+7,Punjab Kings,Shashank Singh,43
+7,Punjab Kings,MP Stoinis,111
+7,Punjab Kings,M Jansen,37
+7,Punjab Kings,XC Bartlett,5
+7,Punjab Kings,Vijaykumar Vyshak,17
+7,Punjab Kings,Arshdeep Singh,84
+8,Mumbai Indians,M Markande,38
+8,Mumbai Indians,RD Rickelton,15
+8,Mumbai Indians,RG Sharma,273
+8,Mumbai Indians,Tilak Varma,55
+8,Mumbai Indians,SA Yadav,167
+8,Mumbai Indians,SE Rutherford,24
+8,Mumbai Indians,Naman Dhir,24
+8,Mumbai Indians,MJ Santner,31
+8,Mumbai Indians,C Bosch,3
+8,Mumbai Indians,SN Thakur,106
+8,Mumbai Indians,DL Chahar,95
+8,Mumbai Indians,JJ Bumrah,146
+8,Delhi Capitals,Mukesh Kumar,33
+8,Delhi Capitals,KL Rahul,147
+8,Delhi Capitals,P Nissanka,1
+8,Delhi Capitals,N Rana,119
+8,Delhi Capitals,Sameer Rizvi,15
+8,Delhi Capitals,DA Miller,142
+8,Delhi Capitals,T Stubbs,34
+8,Delhi Capitals,V Nigam,15
+8,Delhi Capitals,AR Patel,164
+8,Delhi Capitals,Kuldeep Yadav,100
+8,Delhi Capitals,L Ngidi,17
+8,Delhi Capitals,T Natarajan,65
+9,Rajasthan Royals,Ravi Bishnoi,78
+9,Rajasthan Royals,YBK Jaiswal,67
+9,Rajasthan Royals,V Suryavanshi,8
+9,Rajasthan Royals,Dhruv Jurel,42
+9,Rajasthan Royals,R Parag,84
+9,Rajasthan Royals,SO Hetmyer,87
+9,Rajasthan Royals,D Ferreira,3
+9,Rajasthan Royals,RA Jadeja,254
+9,Rajasthan Royals,JC Archer,53
+9,Rajasthan Royals,N Burger,6
+9,Rajasthan Royals,TU Deshpande,46
+9,Rajasthan Royals,Sandeep Sharma,137
+9,Gujarat Titans,M Prasidh Krishna,67
+9,Gujarat Titans,B Sai Sudharsan,41
+9,Gujarat Titans,Kumar Kushagra,4
+9,Gujarat Titans,JC Buttler,122
+9,Gujarat Titans,GD Phillips,9
+9,Gujarat Titans,Washington Sundar,67
+9,Gujarat Titans,R Tewatia,109
+9,Gujarat Titans,M Shahrukh Khan,56
+9,Gujarat Titans,Rashid Khan,137
+9,Gujarat Titans,K Rabada,85
+9,Gujarat Titans,Ashok Sharma,1
+9,Gujarat Titans,Mohammed Siraj,109
+10,Sunrisers Hyderabad,E Malinga,9
+10,Sunrisers Hyderabad,TM Head,40
+10,Sunrisers Hyderabad,Abhishek Sharma,79
+10,Sunrisers Hyderabad,Ishan Kishan,121
+10,Sunrisers Hyderabad,LS Livingstone,49
+10,Sunrisers Hyderabad,H Klaasen,51
+10,Sunrisers Hyderabad,Nithish Kumar Reddy,30
+10,Sunrisers Hyderabad,Aniket Verma,16
+10,Sunrisers Hyderabad,Harsh Dubey,5
+10,Sunrisers Hyderabad,Shivang Kumar,1
+10,Sunrisers Hyderabad,HV Patel,119
+10,Sunrisers Hyderabad,JD Unadkat,114
+10,Lucknow Super Giants,Mohammed Shami,120
+10,Lucknow Super Giants,AK Markram,58
+10,Lucknow Super Giants,MR Marsh,56
+10,Lucknow Super Giants,RR Pant,126
+10,Lucknow Super Giants,A Badoni,57
+10,Lucknow Super Giants,N Pooran,91
+10,Lucknow Super Giants,Abdul Samad,64
+10,Lucknow Super Giants,MD Choudhary,1
+10,Lucknow Super Giants,M Siddharth,5
+10,Lucknow Super Giants,Avesh Khan,75
+10,Lucknow Super Giants,DS Rathi,13
+10,Lucknow Super Giants,Prince Yadav,7
+11,Royal Challengers Bengaluru,Suyash Sharma,28
+11,Royal Challengers Bengaluru,PD Salt,35
+11,Royal Challengers Bengaluru,V Kohli,267
+11,Royal Challengers Bengaluru,D Padikkal,75
+11,Royal Challengers Bengaluru,RM Patidar,43
+11,Royal Challengers Bengaluru,TH David,51
+11,Royal Challengers Bengaluru,JM Sharma,56
+11,Royal Challengers Bengaluru,R Shepherd,19
+11,Royal Challengers Bengaluru,KH Pandya,143
+11,Royal Challengers Bengaluru,B Kumar,191
+11,Royal Challengers Bengaluru,Abhinandan Singh,1
+11,Royal Challengers Bengaluru,JA Duffy,1
+11,Chennai Super Kings,KK Ahmed,73
+11,Chennai Super Kings,SV Samson,178
+11,Chennai Super Kings,RD Gaikwad,73
+11,Chennai Super Kings,A Mhatre,9
+11,Chennai Super Kings,SN Khan,52
+11,Chennai Super Kings,Kartik Sharma,2
+11,Chennai Super Kings,S Dube,81
+11,Chennai Super Kings,PR Veer,1
+11,Chennai Super Kings,J Overton,4
+11,Chennai Super Kings,A Kamboj,13
+11,Chennai Super Kings,Noor Ahmad,39
+11,Chennai Super Kings,MJ Henry,8
+12,Kolkata Knight Riders,AM Rahane,200
+12,Kolkata Knight Riders,FH Allen,2
+12,Kolkata Knight Riders,C Green,31
+12,Kolkata Knight Riders,A Raghuvanshi,24
+12,Kolkata Knight Riders,R Powell,28
+12,Kolkata Knight Riders,RK Singh,60
+12,Kolkata Knight Riders,Ramandeep Singh,32
+12,Kolkata Knight Riders,AS Roy,13
+12,Kolkata Knight Riders,Navdeep Saini,31
+12,Kolkata Knight Riders,VG Arora,34
+12,Kolkata Knight Riders,Kartik Tyagi,22
+12,Kolkata Knight Riders,Kolkata Knight Riders Substitute 12,226
+12,Punjab Kings,SS Iyer,135
+12,Punjab Kings,P Simran Singh,54
+12,Punjab Kings,N Wadhera,39
+12,Punjab Kings,C Connolly,2
+12,Punjab Kings,Shashank Singh,44
+12,Punjab Kings,MP Stoinis,112
+12,Punjab Kings,M Jansen,38
+12,Punjab Kings,Vijaykumar Vyshak,18
+12,Punjab Kings,XC Bartlett,6
+12,Punjab Kings,Arshdeep Singh,85
+12,Punjab Kings,YS Chahal,177
+12,Punjab Kings,Punjab Kings Substitute 12,29
+13,Rajasthan Royals,Ravi Bishnoi,79
+13,Rajasthan Royals,YBK Jaiswal,68
+13,Rajasthan Royals,V Suryavanshi,9
+13,Rajasthan Royals,Dhruv Jurel,43
+13,Rajasthan Royals,R Parag,85
+13,Rajasthan Royals,SO Hetmyer,88
+13,Rajasthan Royals,RA Jadeja,255
+13,Rajasthan Royals,D Ferreira,4
+13,Rajasthan Royals,JC Archer,54
+13,Rajasthan Royals,N Burger,7
+13,Rajasthan Royals,TU Deshpande,47
+13,Rajasthan Royals,Sandeep Sharma,138
+13,Mumbai Indians,AM Ghazanfar,1
+13,Mumbai Indians,RD Rickelton,16
+13,Mumbai Indians,RG Sharma,274
+13,Mumbai Indians,SA Yadav,168
+13,Mumbai Indians,Tilak Varma,56
+13,Mumbai Indians,HH Pandya,153
+13,Mumbai Indians,Naman Dhir,25
+13,Mumbai Indians,SE Rutherford,25
+13,Mumbai Indians,SN Thakur,107
+13,Mumbai Indians,DL Chahar,96
+13,Mumbai Indians,TA Boult,120
+13,Mumbai Indians,JJ Bumrah,147
+14,Gujarat Titans,M Shahrukh Khan,57
+14,Gujarat Titans,B Sai Sudharsan,42
+14,Gujarat Titans,Shubman Gill,119
+14,Gujarat Titans,JC Buttler,123
+14,Gujarat Titans,Washington Sundar,68
+14,Gujarat Titans,GD Phillips,10
+14,Gujarat Titans,R Tewatia,110
+14,Gujarat Titans,Rashid Khan,138
+14,Gujarat Titans,K Rabada,86
+14,Gujarat Titans,Mohammed Siraj,110
+14,Gujarat Titans,Ashok Sharma,2
+14,Gujarat Titans,M Prasidh Krishna,68
+14,Delhi Capitals,Mukesh Kumar,34
+14,Delhi Capitals,P Nissanka,2
+14,Delhi Capitals,KL Rahul,148
+14,Delhi Capitals,N Rana,120
+14,Delhi Capitals,Sameer Rizvi,16
+14,Delhi Capitals,DA Miller,143
+14,Delhi Capitals,AR Patel,165
+14,Delhi Capitals,T Stubbs,35
+14,Delhi Capitals,V Nigam,16
+14,Delhi Capitals,Kuldeep Yadav,101
+14,Delhi Capitals,L Ngidi,18
+14,Delhi Capitals,T Natarajan,66
+15,Kolkata Knight Riders,VG Arora,35
+15,Kolkata Knight Riders,AM Rahane,201
+15,Kolkata Knight Riders,FH Allen,3
+15,Kolkata Knight Riders,A Raghuvanshi,25
+15,Kolkata Knight Riders,C Green,32
+15,Kolkata Knight Riders,RK Singh,61
+15,Kolkata Knight Riders,R Powell,29
+15,Kolkata Knight Riders,Ramandeep Singh,33
+15,Kolkata Knight Riders,AS Roy,14
+15,Kolkata Knight Riders,SP Narine,190
+15,Kolkata Knight Riders,Navdeep Saini,32
+15,Kolkata Knight Riders,Kartik Tyagi,23
+15,Lucknow Super Giants,M Siddharth,6
+15,Lucknow Super Giants,MR Marsh,57
+15,Lucknow Super Giants,AK Markram,59
+15,Lucknow Super Giants,RR Pant,127
+15,Lucknow Super Giants,A Badoni,58
+15,Lucknow Super Giants,N Pooran,92
+15,Lucknow Super Giants,Abdul Samad,65
+15,Lucknow Super Giants,MD Choudhary,2
+15,Lucknow Super Giants,Mohammed Shami,121
+15,Lucknow Super Giants,Avesh Khan,76
+15,Lucknow Super Giants,DS Rathi,14
+15,Lucknow Super Giants,Prince Yadav,8
+16,Royal Challengers Bengaluru,PD Salt,36
+16,Royal Challengers Bengaluru,V Kohli,268
+16,Royal Challengers Bengaluru,D Padikkal,76
+16,Royal Challengers Bengaluru,RM Patidar,44
+16,Royal Challengers Bengaluru,KH Pandya,144
+16,Royal Challengers Bengaluru,JM Sharma,57
+16,Royal Challengers Bengaluru,TH David,52
+16,Royal Challengers Bengaluru,R Shepherd,20
+16,Royal Challengers Bengaluru,VR Iyer,61
+16,Royal Challengers Bengaluru,B Kumar,192
+16,Royal Challengers Bengaluru,Abhinandan Singh,2
+16,Royal Challengers Bengaluru,JR Hazlewood,39
+16,Rajasthan Royals,Sandeep Sharma,139
+16,Rajasthan Royals,YBK Jaiswal,69
+16,Rajasthan Royals,V Suryavanshi,10
+16,Rajasthan Royals,Dhruv Jurel,44
+16,Rajasthan Royals,SO Hetmyer,89
+16,Rajasthan Royals,R Parag,86
+16,Rajasthan Royals,RA Jadeja,256
+16,Rajasthan Royals,D Ferreira,5
+16,Rajasthan Royals,Ravi Bishnoi,80
+16,Rajasthan Royals,JC Archer,55
+16,Rajasthan Royals,N Burger,8
+16,Rajasthan Royals,Brijesh Sharma,1
+17,Sunrisers Hyderabad,JD Unadkat,115
+17,Sunrisers Hyderabad,Abhishek Sharma,80
+17,Sunrisers Hyderabad,TM Head,41
+17,Sunrisers Hyderabad,Ishan Kishan,122
+17,Sunrisers Hyderabad,H Klaasen,52
+17,Sunrisers Hyderabad,Aniket Verma,17
+17,Sunrisers Hyderabad,S Arora,2
+17,Sunrisers Hyderabad,Nithish Kumar Reddy,31
+17,Sunrisers Hyderabad,Harsh Dubey,6
+17,Sunrisers Hyderabad,Shivang Kumar,2
+17,Sunrisers Hyderabad,HV Patel,120
+17,Sunrisers Hyderabad,E Malinga,10
+17,Punjab Kings,YS Chahal,178
+17,Punjab Kings,Priyansh Arya,20
+17,Punjab Kings,P Simran Singh,55
+17,Punjab Kings,C Connolly,3
+17,Punjab Kings,SS Iyer,136
+17,Punjab Kings,N Wadhera,40
+17,Punjab Kings,Shashank Singh,45
+17,Punjab Kings,MP Stoinis,113
+17,Punjab Kings,M Jansen,39
+17,Punjab Kings,XC Bartlett,7
+17,Punjab Kings,Vijaykumar Vyshak,19
+17,Punjab Kings,Arshdeep Singh,86
+18,Chennai Super Kings,AJ Hosein,1
+18,Chennai Super Kings,SV Samson,179
+18,Chennai Super Kings,RD Gaikwad,74
+18,Chennai Super Kings,A Mhatre,10
+18,Chennai Super Kings,S Dube,82
+18,Chennai Super Kings,SN Khan,53
+18,Chennai Super Kings,D Brevis,16
+18,Chennai Super Kings,J Overton,5
+18,Chennai Super Kings,Noor Ahmad,40
+18,Chennai Super Kings,A Kamboj,14
+18,Chennai Super Kings,Gurjapneet Singh,0
+18,Chennai Super Kings,KK Ahmed,74
+18,Delhi Capitals,Mukesh Kumar,35
+18,Delhi Capitals,P Nissanka,3
+18,Delhi Capitals,KL Rahul,149
+18,Delhi Capitals,Sameer Rizvi,17
+18,Delhi Capitals,AR Patel,166
+18,Delhi Capitals,DA Miller,144
+18,Delhi Capitals,T Stubbs,36
+18,Delhi Capitals,Ashutosh Sharma,24
+18,Delhi Capitals,Auqib Nabi,0
+18,Delhi Capitals,Kuldeep Yadav,102
+18,Delhi Capitals,L Ngidi,19
+18,Delhi Capitals,T Natarajan,67
+19,Lucknow Super Giants,AK Markram,60
+19,Lucknow Super Giants,MR Marsh,58
+19,Lucknow Super Giants,RR Pant,128
+19,Lucknow Super Giants,A Badoni,59
+19,Lucknow Super Giants,N Pooran,93
+19,Lucknow Super Giants,Abdul Samad,66
+19,Lucknow Super Giants,MD Choudhary,3
+19,Lucknow Super Giants,GF Linde,0
+19,Lucknow Super Giants,Mohammed Shami,122
+19,Lucknow Super Giants,Avesh Khan,77
+19,Lucknow Super Giants,DS Rathi,15
+19,Lucknow Super Giants,Prince Yadav,9
+19,Gujarat Titans,Mohammed Siraj,111
+19,Gujarat Titans,B Sai Sudharsan,43
+19,Gujarat Titans,Shubman Gill,120
+19,Gujarat Titans,JC Buttler,124
+19,Gujarat Titans,Washington Sundar,69
+19,Gujarat Titans,R Tewatia,111
+19,Gujarat Titans,GD Phillips,11
+19,Gujarat Titans,Rashid Khan,139
+19,Gujarat Titans,K Rabada,87
+19,Gujarat Titans,Ashok Sharma,3
+19,Gujarat Titans,M Prasidh Krishna,69
+19,Gujarat Titans,M Shahrukh Khan,58
+20,Royal Challengers Bengaluru,Rasikh Salam,13
+20,Royal Challengers Bengaluru,PD Salt,37
+20,Royal Challengers Bengaluru,V Kohli,269
+20,Royal Challengers Bengaluru,RM Patidar,45
+20,Royal Challengers Bengaluru,TH David,53
+20,Royal Challengers Bengaluru,JM Sharma,58
+20,Royal Challengers Bengaluru,R Shepherd,21
+20,Royal Challengers Bengaluru,D Padikkal,77
+20,Royal Challengers Bengaluru,KH Pandya,145
+20,Royal Challengers Bengaluru,B Kumar,193
+20,Royal Challengers Bengaluru,JA Duffy,2
+20,Royal Challengers Bengaluru,Suyash Sharma,29
+20,Mumbai Indians,M Markande,39
+20,Mumbai Indians,RD Rickelton,17
+20,Mumbai Indians,RG Sharma,275
+20,Mumbai Indians,SA Yadav,169
+20,Mumbai Indians,Tilak Varma,57
+20,Mumbai Indians,HH Pandya,154
+20,Mumbai Indians,SE Rutherford,26
+20,Mumbai Indians,Naman Dhir,26
+20,Mumbai Indians,MJ Santner,32
+20,Mumbai Indians,SN Thakur,108
+20,Mumbai Indians,JJ Bumrah,148
+20,Mumbai Indians,TA Boult,121
+21,Sunrisers Hyderabad,Sakib Hussain,0
+21,Sunrisers Hyderabad,Abhishek Sharma,81
+21,Sunrisers Hyderabad,TM Head,42
+21,Sunrisers Hyderabad,Ishan Kishan,123
+21,Sunrisers Hyderabad,H Klaasen,53
+21,Sunrisers Hyderabad,Nithish Kumar Reddy,32
+21,Sunrisers Hyderabad,S Arora,3
+21,Sunrisers Hyderabad,Aniket Verma,18
+21,Sunrisers Hyderabad,Harsh Dubey,7
+21,Sunrisers Hyderabad,Shivang Kumar,3
+21,Sunrisers Hyderabad,PP Hinge,0
+21,Sunrisers Hyderabad,E Malinga,11
+21,Rajasthan Royals,Sandeep Sharma,140
+21,Rajasthan Royals,YBK Jaiswal,70
+21,Rajasthan Royals,V Suryavanshi,11
+21,Rajasthan Royals,Dhruv Jurel,45
+21,Rajasthan Royals,LG Pretorius,0
+21,Rajasthan Royals,R Parag,87
+21,Rajasthan Royals,RA Jadeja,257
+21,Rajasthan Royals,D Ferreira,6
+21,Rajasthan Royals,JC Archer,56
+21,Rajasthan Royals,TU Deshpande,48
+21,Rajasthan Royals,Ravi Bishnoi,81
+21,Rajasthan Royals,N Burger,9
+22,Chennai Super Kings,AJ Hosein,2
+22,Chennai Super Kings,SV Samson,180
+22,Chennai Super Kings,RD Gaikwad,75
+22,Chennai Super Kings,A Mhatre,11
+22,Chennai Super Kings,D Brevis,17
+22,Chennai Super Kings,SN Khan,54
+22,Chennai Super Kings,S Dube,83
+22,Chennai Super Kings,J Overton,6
+22,Chennai Super Kings,Noor Ahmad,41
+22,Chennai Super Kings,A Kamboj,15
+22,Chennai Super Kings,Gurjapneet Singh,1
+22,Chennai Super Kings,KK Ahmed,75
+22,Kolkata Knight Riders,CV Varun,85
+22,Kolkata Knight Riders,FH Allen,4
+22,Kolkata Knight Riders,SP Narine,191
+22,Kolkata Knight Riders,AM Rahane,202
+22,Kolkata Knight Riders,A Raghuvanshi,26
+22,Kolkata Knight Riders,RK Singh,62
+22,Kolkata Knight Riders,C Green,33
+22,Kolkata Knight Riders,R Powell,30
+22,Kolkata Knight Riders,Ramandeep Singh,34
+22,Kolkata Knight Riders,AS Roy,15
+22,Kolkata Knight Riders,VG Arora,36
+22,Kolkata Knight Riders,Kartik Tyagi,24
+23,Lucknow Super Giants,MR Marsh,59
+23,Lucknow Super Giants,AK Markram,61
+23,Lucknow Super Giants,RR Pant,129
+23,Lucknow Super Giants,N Pooran,94
+23,Lucknow Super Giants,A Badoni,60
+23,Lucknow Super Giants,Abdul Samad,67
+23,Lucknow Super Giants,MD Choudhary,4
+23,Lucknow Super Giants,GF Linde,1
+23,Lucknow Super Giants,Mohammed Shami,123
+23,Lucknow Super Giants,Avesh Khan,78
+23,Lucknow Super Giants,DS Rathi,16
+23,Lucknow Super Giants,Prince Yadav,10
+23,Royal Challengers Bengaluru,Suyash Sharma,30
+23,Royal Challengers Bengaluru,PD Salt,38
+23,Royal Challengers Bengaluru,V Kohli,270
+23,Royal Challengers Bengaluru,D Padikkal,78
+23,Royal Challengers Bengaluru,RM Patidar,46
+23,Royal Challengers Bengaluru,JM Sharma,59
+23,Royal Challengers Bengaluru,TH David,54
+23,Royal Challengers Bengaluru,R Shepherd,22
+23,Royal Challengers Bengaluru,KH Pandya,146
+23,Royal Challengers Bengaluru,B Kumar,194
+23,Royal Challengers Bengaluru,Rasikh Salam,14
+23,Royal Challengers Bengaluru,JR Hazlewood,40
+24,Mumbai Indians,AM Ghazanfar,2
+24,Mumbai Indians,RD Rickelton,18
+24,Mumbai Indians,Q de Kock,115
+24,Mumbai Indians,SA Yadav,170
+24,Mumbai Indians,Naman Dhir,27
+24,Mumbai Indians,HH Pandya,155
+24,Mumbai Indians,SE Rutherford,27
+24,Mumbai Indians,Tilak Varma,58
+24,Mumbai Indians,Mayank Rawat,0
+24,Mumbai Indians,SN Thakur,109
+24,Mumbai Indians,DL Chahar,97
+24,Mumbai Indians,JJ Bumrah,149
+24,Punjab Kings,Priyansh Arya,21
+24,Punjab Kings,P Simran Singh,56
+24,Punjab Kings,C Connolly,4
+24,Punjab Kings,SS Iyer,137
+24,Punjab Kings,MP Stoinis,114
+24,Punjab Kings,Shashank Singh,46
+24,Punjab Kings,M Jansen,40
+24,Punjab Kings,XC Bartlett,8
+24,Punjab Kings,Vijaykumar Vyshak,20
+24,Punjab Kings,Arshdeep Singh,87
+24,Punjab Kings,YS Chahal,179
+24,Punjab Kings,Punjab Kings Substitute 12,30
+25,Kolkata Knight Riders,CV Varun,86
+25,Kolkata Knight Riders,TL Seifert,3
+25,Kolkata Knight Riders,AM Rahane,203
+25,Kolkata Knight Riders,A Raghuvanshi,27
+25,Kolkata Knight Riders,C Green,34
+25,Kolkata Knight Riders,R Powell,31
+25,Kolkata Knight Riders,AS Roy,16
+25,Kolkata Knight Riders,RK Singh,63
+25,Kolkata Knight Riders,Ramandeep Singh,35
+25,Kolkata Knight Riders,SP Narine,192
+25,Kolkata Knight Riders,Kartik Tyagi,25
+25,Kolkata Knight Riders,VG Arora,37
+25,Gujarat Titans,M Prasidh Krishna,70
+25,Gujarat Titans,B Sai Sudharsan,44
+25,Gujarat Titans,Shubman Gill,121
+25,Gujarat Titans,JC Buttler,125
+25,Gujarat Titans,Washington Sundar,70
+25,Gujarat Titans,GD Phillips,12
+25,Gujarat Titans,R Tewatia,112
+25,Gujarat Titans,M Shahrukh Khan,59
+25,Gujarat Titans,Rashid Khan,140
+25,Gujarat Titans,Ashok Sharma,4
+25,Gujarat Titans,K Rabada,88
+25,Gujarat Titans,Mohammed Siraj,112
+26,Royal Challengers Bengaluru,PD Salt,39
+26,Royal Challengers Bengaluru,V Kohli,271
+26,Royal Challengers Bengaluru,D Padikkal,79
+26,Royal Challengers Bengaluru,RM Patidar,47
+26,Royal Challengers Bengaluru,TH David,55
+26,Royal Challengers Bengaluru,JM Sharma,60
+26,Royal Challengers Bengaluru,R Shepherd,23
+26,Royal Challengers Bengaluru,KH Pandya,147
+26,Royal Challengers Bengaluru,Rasikh Salam,15
+26,Royal Challengers Bengaluru,B Kumar,195
+26,Royal Challengers Bengaluru,Suyash Sharma,31
+26,Royal Challengers Bengaluru,JR Hazlewood,41
+26,Delhi Capitals,Mukesh Kumar,36
+26,Delhi Capitals,P Nissanka,4
+26,Delhi Capitals,KL Rahul,150
+26,Delhi Capitals,KK Nair,84
+26,Delhi Capitals,Sameer Rizvi,18
+26,Delhi Capitals,T Stubbs,37
+26,Delhi Capitals,AR Patel,167
+26,Delhi Capitals,DA Miller,145
+26,Delhi Capitals,Auqib Nabi,1
+26,Delhi Capitals,L Ngidi,20
+26,Delhi Capitals,Kuldeep Yadav,103
+26,Delhi Capitals,T Natarajan,68
+27,Sunrisers Hyderabad,Abhishek Sharma,82
+27,Sunrisers Hyderabad,TM Head,43
+27,Sunrisers Hyderabad,Ishan Kishan,124
+27,Sunrisers Hyderabad,H Klaasen,54
+27,Sunrisers Hyderabad,Aniket Verma,19
+27,Sunrisers Hyderabad,Nithish Kumar Reddy,33
+27,Sunrisers Hyderabad,S Arora,4
+27,Sunrisers Hyderabad,LS Livingstone,50
+27,Sunrisers Hyderabad,Shivang Kumar,4
+27,Sunrisers Hyderabad,PP Hinge,1
+27,Sunrisers Hyderabad,Sakib Hussain,1
+27,Sunrisers Hyderabad,E Malinga,12
+27,Chennai Super Kings,Gurjapneet Singh,2
+27,Chennai Super Kings,SV Samson,181
+27,Chennai Super Kings,RD Gaikwad,76
+27,Chennai Super Kings,A Mhatre,12
+27,Chennai Super Kings,MW Short,7
+27,Chennai Super Kings,SN Khan,55
+27,Chennai Super Kings,D Brevis,18
+27,Chennai Super Kings,S Dube,84
+27,Chennai Super Kings,J Overton,7
+27,Chennai Super Kings,A Kamboj,16
+27,Chennai Super Kings,Noor Ahmad,42
+27,Chennai Super Kings,Mukesh Choudhary,16
+28,Rajasthan Royals,Yash Raj Punja,0
+28,Rajasthan Royals,YBK Jaiswal,71
+28,Rajasthan Royals,V Suryavanshi,12
+28,Rajasthan Royals,Dhruv Jurel,46
+28,Rajasthan Royals,R Parag,88
+28,Rajasthan Royals,SO Hetmyer,90
+28,Rajasthan Royals,D Ferreira,7
+28,Rajasthan Royals,RA Jadeja,258
+28,Rajasthan Royals,JC Archer,57
+28,Rajasthan Royals,Ravi Bishnoi,82
+28,Rajasthan Royals,Brijesh Sharma,2
+28,Rajasthan Royals,N Burger,10
+28,Kolkata Knight Riders,CV Varun,87
+28,Kolkata Knight Riders,TL Seifert,4
+28,Kolkata Knight Riders,AM Rahane,204
+28,Kolkata Knight Riders,A Raghuvanshi,28
+28,Kolkata Knight Riders,C Green,35
+28,Kolkata Knight Riders,R Powell,32
+28,Kolkata Knight Riders,RK Singh,64
+28,Kolkata Knight Riders,Ramandeep Singh,36
+28,Kolkata Knight Riders,AS Roy,17
+28,Kolkata Knight Riders,SP Narine,193
+28,Kolkata Knight Riders,VG Arora,38
+28,Kolkata Knight Riders,Kartik Tyagi,26
+29,Punjab Kings,Vijaykumar Vyshak,21
+29,Punjab Kings,Priyansh Arya,22
+29,Punjab Kings,P Simran Singh,57
+29,Punjab Kings,C Connolly,5
+29,Punjab Kings,SS Iyer,138
+29,Punjab Kings,MP Stoinis,115
+29,Punjab Kings,N Wadhera,41
+29,Punjab Kings,Shashank Singh,47
+29,Punjab Kings,M Jansen,41
+29,Punjab Kings,XC Bartlett,9
+29,Punjab Kings,Arshdeep Singh,88
+29,Punjab Kings,YS Chahal,180
+29,Lucknow Super Giants,Mohsin Khan,25
+29,Lucknow Super Giants,MR Marsh,60
+29,Lucknow Super Giants,A Badoni,61
+29,Lucknow Super Giants,RR Pant,130
+29,Lucknow Super Giants,N Pooran,95
+29,Lucknow Super Giants,AK Markram,62
+29,Lucknow Super Giants,MD Choudhary,5
+29,Lucknow Super Giants,Himmat Singh,3
+29,Lucknow Super Giants,Mohammed Shami,124
+29,Lucknow Super Giants,Avesh Khan,79
+29,Lucknow Super Giants,Prince Yadav,11
+29,Lucknow Super Giants,M Siddharth,7
+30,Mumbai Indians,Q de Kock,116
+30,Mumbai Indians,DV Malewar,0
+30,Mumbai Indians,Naman Dhir,28
+30,Mumbai Indians,SA Yadav,171
+30,Mumbai Indians,Tilak Varma,59
+30,Mumbai Indians,HH Pandya,156
+30,Mumbai Indians,SE Rutherford,28
+30,Mumbai Indians,MJ Santner,33
+30,Mumbai Indians,Krish Bhagat,0
+30,Mumbai Indians,JJ Bumrah,150
+30,Mumbai Indians,AM Ghazanfar,3
+30,Mumbai Indians,Ashwani Kumar,6
+30,Gujarat Titans,M Prasidh Krishna,71
+30,Gujarat Titans,B Sai Sudharsan,45
+30,Gujarat Titans,Shubman Gill,122
+30,Gujarat Titans,JC Buttler,126
+30,Gujarat Titans,Washington Sundar,71
+30,Gujarat Titans,GD Phillips,13
+30,Gujarat Titans,R Tewatia,113
+30,Gujarat Titans,M Shahrukh Khan,60
+30,Gujarat Titans,Rashid Khan,141
+30,Gujarat Titans,K Rabada,89
+30,Gujarat Titans,Ashok Sharma,5
+30,Gujarat Titans,Mohammed Siraj,113
+31,Sunrisers Hyderabad,D Madushanka,0
+31,Sunrisers Hyderabad,Abhishek Sharma,83
+31,Sunrisers Hyderabad,TM Head,44
+31,Sunrisers Hyderabad,Ishan Kishan,125
+31,Sunrisers Hyderabad,H Klaasen,55
+31,Sunrisers Hyderabad,S Arora,5
+31,Sunrisers Hyderabad,Aniket Verma,20
+31,Sunrisers Hyderabad,Nithish Kumar Reddy,34
+31,Sunrisers Hyderabad,Shivang Kumar,5
+31,Sunrisers Hyderabad,Harsh Dubey,8
+31,Sunrisers Hyderabad,Sakib Hussain,2
+31,Sunrisers Hyderabad,E Malinga,13
+31,Delhi Capitals,Mukesh Kumar,37
+31,Delhi Capitals,P Nissanka,5
+31,Delhi Capitals,KL Rahul,151
+31,Delhi Capitals,N Rana,121
+31,Delhi Capitals,Sameer Rizvi,19
+31,Delhi Capitals,DA Miller,146
+31,Delhi Capitals,T Stubbs,38
+31,Delhi Capitals,Ashutosh Sharma,25
+31,Delhi Capitals,AR Patel,168
+31,Delhi Capitals,Kuldeep Yadav,104
+31,Delhi Capitals,L Ngidi,21
+31,Delhi Capitals,T Natarajan,69
+32,Rajasthan Royals,YBK Jaiswal,72
+32,Rajasthan Royals,V Suryavanshi,13
+32,Rajasthan Royals,Dhruv Jurel,47
+32,Rajasthan Royals,R Parag,89
+32,Rajasthan Royals,SO Hetmyer,91
+32,Rajasthan Royals,RA Jadeja,259
+32,Rajasthan Royals,D Ferreira,8
+32,Rajasthan Royals,SB Dubey,13
+32,Rajasthan Royals,JC Archer,58
+32,Rajasthan Royals,N Burger,11
+32,Rajasthan Royals,Brijesh Sharma,3
+32,Rajasthan Royals,Ravi Bishnoi,83
+32,Lucknow Super Giants,Prince Yadav,12
+32,Lucknow Super Giants,MR Marsh,61
+32,Lucknow Super Giants,A Badoni,62
+32,Lucknow Super Giants,RR Pant,131
+32,Lucknow Super Giants,AK Markram,63
+32,Lucknow Super Giants,N Pooran,96
+32,Lucknow Super Giants,Himmat Singh,4
+32,Lucknow Super Giants,MD Choudhary,6
+32,Lucknow Super Giants,Mohammed Shami,125
+32,Lucknow Super Giants,MP Yadav,6
+32,Lucknow Super Giants,DS Rathi,17
+32,Lucknow Super Giants,Mohsin Khan,26
+33,Chennai Super Kings,SV Samson,182
+33,Chennai Super Kings,RD Gaikwad,77
+33,Chennai Super Kings,SN Khan,56
+33,Chennai Super Kings,S Dube,85
+33,Chennai Super Kings,D Brevis,19
+33,Chennai Super Kings,Kartik Sharma,3
+33,Chennai Super Kings,J Overton,8
+33,Chennai Super Kings,AJ Hosein,3
+33,Chennai Super Kings,Noor Ahmad,43
+33,Chennai Super Kings,A Kamboj,17
+33,Chennai Super Kings,Mukesh Choudhary,17
+33,Chennai Super Kings,Gurjapneet Singh,3
+33,Mumbai Indians,MJ Santner,34
+33,Mumbai Indians,AM Ghazanfar,4
+33,Mumbai Indians,Q de Kock,117
+33,Mumbai Indians,DV Malewar,1
+33,Mumbai Indians,Naman Dhir,29
+33,Mumbai Indians,SA Yadav,172
+33,Mumbai Indians,Tilak Varma,60
+33,Mumbai Indians,HH Pandya,157
+33,Mumbai Indians,SE Rutherford,29
+33,Mumbai Indians,SN Thakur,110
+33,Mumbai Indians,Krish Bhagat,1
+33,Mumbai Indians,Ashwani Kumar,7
+34,Gujarat Titans,R Tewatia,114
+34,Gujarat Titans,B Sai Sudharsan,46
+34,Gujarat Titans,Shubman Gill,123
+34,Gujarat Titans,JC Buttler,127
+34,Gujarat Titans,Washington Sundar,72
+34,Gujarat Titans,JO Holder,46
+34,Gujarat Titans,M Shahrukh Khan,61
+34,Gujarat Titans,Rashid Khan,142
+34,Gujarat Titans,MJ Suthar,1
+34,Gujarat Titans,K Rabada,90
+34,Gujarat Titans,Mohammed Siraj,114
+34,Gujarat Titans,M Prasidh Krishna,72
+34,Royal Challengers Bengaluru,Suyash Sharma,32
+34,Royal Challengers Bengaluru,JG Bethell,2
+34,Royal Challengers Bengaluru,V Kohli,272
+34,Royal Challengers Bengaluru,D Padikkal,80
+34,Royal Challengers Bengaluru,RM Patidar,48
+34,Royal Challengers Bengaluru,JM Sharma,61
+34,Royal Challengers Bengaluru,TH David,56
+34,Royal Challengers Bengaluru,KH Pandya,148
+34,Royal Challengers Bengaluru,R Shepherd,24
+34,Royal Challengers Bengaluru,B Kumar,196
+34,Royal Challengers Bengaluru,JR Hazlewood,42
+34,Royal Challengers Bengaluru,Rasikh Salam,16
+35,Delhi Capitals,Auqib Nabi,2
+35,Delhi Capitals,V Nigam,17
+35,Delhi Capitals,P Nissanka,6
+35,Delhi Capitals,KL Rahul,152
+35,Delhi Capitals,N Rana,122
+35,Delhi Capitals,DA Miller,147
+35,Delhi Capitals,Sameer Rizvi,20
+35,Delhi Capitals,AR Patel,169
+35,Delhi Capitals,T Stubbs,39
+35,Delhi Capitals,L Ngidi,22
+35,Delhi Capitals,Kuldeep Yadav,105
+35,Delhi Capitals,T Natarajan,70
+35,Punjab Kings,YS Chahal,181
+35,Punjab Kings,Priyansh Arya,23
+35,Punjab Kings,P Simran Singh,58
+35,Punjab Kings,C Connolly,6
+35,Punjab Kings,SS Iyer,139
+35,Punjab Kings,N Wadhera,42
+35,Punjab Kings,Shashank Singh,48
+35,Punjab Kings,MP Stoinis,116
+35,Punjab Kings,M Jansen,42
+35,Punjab Kings,XC Bartlett,10
+35,Punjab Kings,Vijaykumar Vyshak,22
+35,Punjab Kings,Arshdeep Singh,89
+36,Rajasthan Royals,Ravi Bishnoi,84
+36,Rajasthan Royals,YBK Jaiswal,73
+36,Rajasthan Royals,V Suryavanshi,14
+36,Rajasthan Royals,Dhruv Jurel,48
+36,Rajasthan Royals,R Parag,90
+36,Rajasthan Royals,D Ferreira,9
+36,Rajasthan Royals,SO Hetmyer,92
+36,Rajasthan Royals,RA Jadeja,260
+36,Rajasthan Royals,JC Archer,59
+36,Rajasthan Royals,TU Deshpande,49
+36,Rajasthan Royals,N Burger,12
+36,Rajasthan Royals,Brijesh Sharma,4
+36,Sunrisers Hyderabad,Sakib Hussain,3
+36,Sunrisers Hyderabad,TM Head,45
+36,Sunrisers Hyderabad,Abhishek Sharma,84
+36,Sunrisers Hyderabad,Ishan Kishan,126
+36,Sunrisers Hyderabad,H Klaasen,56
+36,Sunrisers Hyderabad,Nithish Kumar Reddy,35
+36,Sunrisers Hyderabad,S Arora,6
+36,Sunrisers Hyderabad,Aniket Verma,21
+36,Sunrisers Hyderabad,PJ Cummins,72
+36,Sunrisers Hyderabad,Shivang Kumar,6
+36,Sunrisers Hyderabad,E Malinga,14
+36,Sunrisers Hyderabad,PP Hinge,2
+37,Chennai Super Kings,SV Samson,183
+37,Chennai Super Kings,RD Gaikwad,78
+37,Chennai Super Kings,Urvil Patel,3
+37,Chennai Super Kings,SN Khan,57
+37,Chennai Super Kings,D Brevis,20
+37,Chennai Super Kings,S Dube,86
+37,Chennai Super Kings,Kartik Sharma,4
+37,Chennai Super Kings,J Overton,9
+37,Chennai Super Kings,AJ Hosein,4
+37,Chennai Super Kings,Noor Ahmad,44
+37,Chennai Super Kings,A Kamboj,18
+37,Chennai Super Kings,Gurjapneet Singh,4
+37,Gujarat Titans,B Sai Sudharsan,47
+37,Gujarat Titans,Shubman Gill,124
+37,Gujarat Titans,JC Buttler,128
+37,Gujarat Titans,Washington Sundar,73
+37,Gujarat Titans,M Shahrukh Khan,62
+37,Gujarat Titans,JO Holder,47
+37,Gujarat Titans,Rashid Khan,143
+37,Gujarat Titans,Arshad Khan,18
+37,Gujarat Titans,K Rabada,91
+37,Gujarat Titans,Mohammed Siraj,115
+37,Gujarat Titans,MJ Suthar,2
+37,Gujarat Titans,Gujarat Titans Substitute 12,17
+38,Kolkata Knight Riders,CV Varun,88
+38,Kolkata Knight Riders,AM Rahane,205
+38,Kolkata Knight Riders,TL Seifert,5
+38,Kolkata Knight Riders,A Raghuvanshi,29
+38,Kolkata Knight Riders,C Green,36
+38,Kolkata Knight Riders,R Powell,33
+38,Kolkata Knight Riders,RK Singh,65
+38,Kolkata Knight Riders,AS Roy,18
+38,Kolkata Knight Riders,Ramandeep Singh,37
+38,Kolkata Knight Riders,SP Narine,194
+38,Kolkata Knight Riders,VG Arora,39
+38,Kolkata Knight Riders,Kartik Tyagi,27
+38,Lucknow Super Giants,Mohsin Khan,27
+38,Lucknow Super Giants,AK Markram,64
+38,Lucknow Super Giants,MR Marsh,62
+38,Lucknow Super Giants,RR Pant,132
+38,Lucknow Super Giants,N Pooran,97
+38,Lucknow Super Giants,A Badoni,63
+38,Lucknow Super Giants,MD Choudhary,7
+38,Lucknow Super Giants,Himmat Singh,5
+38,Lucknow Super Giants,GF Linde,2
+38,Lucknow Super Giants,Mohammed Shami,126
+38,Lucknow Super Giants,Prince Yadav,13
+38,Lucknow Super Giants,DS Rathi,18
+39,Delhi Capitals,SU Parakh,0
+39,Delhi Capitals,KL Rahul,153
+39,Delhi Capitals,N Rana,123
+39,Delhi Capitals,Sameer Rizvi,21
+39,Delhi Capitals,T Stubbs,40
+39,Delhi Capitals,AR Patel,170
+39,Delhi Capitals,Abishek Porel,32
+39,Delhi Capitals,DA Miller,148
+39,Delhi Capitals,KA Jamieson,13
+39,Delhi Capitals,Kuldeep Yadav,106
+39,Delhi Capitals,PVD Chameera,20
+39,Delhi Capitals,T Natarajan,71
+39,Royal Challengers Bengaluru,Suyash Sharma,33
+39,Royal Challengers Bengaluru,JG Bethell,3
+39,Royal Challengers Bengaluru,V Kohli,273
+39,Royal Challengers Bengaluru,D Padikkal,81
+39,Royal Challengers Bengaluru,RM Patidar,49
+39,Royal Challengers Bengaluru,JM Sharma,62
+39,Royal Challengers Bengaluru,TH David,57
+39,Royal Challengers Bengaluru,R Shepherd,25
+39,Royal Challengers Bengaluru,KH Pandya,149
+39,Royal Challengers Bengaluru,B Kumar,197
+39,Royal Challengers Bengaluru,JR Hazlewood,43
+39,Royal Challengers Bengaluru,Rasikh Salam,17
+40,Punjab Kings,Harpreet Brar,49
+40,Punjab Kings,P Simran Singh,59
+40,Punjab Kings,Priyansh Arya,24
+40,Punjab Kings,C Connolly,7
+40,Punjab Kings,SS Iyer,140
+40,Punjab Kings,MP Stoinis,117
+40,Punjab Kings,Suryansh Shedge,5
+40,Punjab Kings,N Wadhera,43
+40,Punjab Kings,M Jansen,43
+40,Punjab Kings,LH Ferguson,49
+40,Punjab Kings,Arshdeep Singh,90
+40,Punjab Kings,YS Chahal,182
+40,Rajasthan Royals,Yash Raj Punja,1
+40,Rajasthan Royals,YBK Jaiswal,74
+40,Rajasthan Royals,V Suryavanshi,15
+40,Rajasthan Royals,Dhruv Jurel,49
+40,Rajasthan Royals,R Parag,91
+40,Rajasthan Royals,D Ferreira,10
+40,Rajasthan Royals,SB Dubey,14
+40,Rajasthan Royals,RA Jadeja,261
+40,Rajasthan Royals,MD Shanaka,3
+40,Rajasthan Royals,JC Archer,60
+40,Rajasthan Royals,N Burger,13
+40,Rajasthan Royals,Brijesh Sharma,5
+41,Mumbai Indians,SN Thakur,111
+41,Mumbai Indians,WG Jacks,21
+41,Mumbai Indians,RD Rickelton,19
+41,Mumbai Indians,SA Yadav,173
+41,Mumbai Indians,Naman Dhir,30
+41,Mumbai Indians,HH Pandya,158
+41,Mumbai Indians,Tilak Varma,61
+41,Mumbai Indians,R Minz,2
+41,Mumbai Indians,TA Boult,122
+41,Mumbai Indians,JJ Bumrah,151
+41,Mumbai Indians,AM Ghazanfar,5
+41,Mumbai Indians,Ashwani Kumar,8
+41,Sunrisers Hyderabad,Sakib Hussain,4
+41,Sunrisers Hyderabad,Aniket Verma,22
+41,Sunrisers Hyderabad,Abhishek Sharma,85
+41,Sunrisers Hyderabad,TM Head,46
+41,Sunrisers Hyderabad,Ishan Kishan,127
+41,Sunrisers Hyderabad,H Klaasen,57
+41,Sunrisers Hyderabad,Nithish Kumar Reddy,36
+41,Sunrisers Hyderabad,S Arora,7
+41,Sunrisers Hyderabad,PJ Cummins,73
+41,Sunrisers Hyderabad,Harsh Dubey,9
+41,Sunrisers Hyderabad,PP Hinge,3
+41,Sunrisers Hyderabad,E Malinga,15
+42,Royal Challengers Bengaluru,JG Bethell,4
+42,Royal Challengers Bengaluru,V Kohli,274
+42,Royal Challengers Bengaluru,D Padikkal,82
+42,Royal Challengers Bengaluru,RM Patidar,50
+42,Royal Challengers Bengaluru,JM Sharma,63
+42,Royal Challengers Bengaluru,TH David,58
+42,Royal Challengers Bengaluru,KH Pandya,150
+42,Royal Challengers Bengaluru,R Shepherd,26
+42,Royal Challengers Bengaluru,VR Iyer,62
+42,Royal Challengers Bengaluru,B Kumar,198
+42,Royal Challengers Bengaluru,JR Hazlewood,44
+42,Royal Challengers Bengaluru,Suyash Sharma,34
+42,Gujarat Titans,Mohammed Siraj,116
+42,Gujarat Titans,B Sai Sudharsan,48
+42,Gujarat Titans,Shubman Gill,125
+42,Gujarat Titans,JC Buttler,129
+42,Gujarat Titans,Washington Sundar,74
+42,Gujarat Titans,M Shahrukh Khan,63
+42,Gujarat Titans,R Tewatia,115
+42,Gujarat Titans,JO Holder,48
+42,Gujarat Titans,Rashid Khan,144
+42,Gujarat Titans,Arshad Khan,19
+42,Gujarat Titans,K Rabada,92
+42,Gujarat Titans,MJ Suthar,3
+43,Rajasthan Royals,TU Deshpande,50
+43,Rajasthan Royals,YBK Jaiswal,75
+43,Rajasthan Royals,V Suryavanshi,16
+43,Rajasthan Royals,Dhruv Jurel,50
+43,Rajasthan Royals,R Parag,92
+43,Rajasthan Royals,RA Jadeja,262
+43,Rajasthan Royals,D Ferreira,11
+43,Rajasthan Royals,SB Dubey,15
+43,Rajasthan Royals,JC Archer,61
+43,Rajasthan Royals,Ravi Bishnoi,85
+43,Rajasthan Royals,N Burger,14
+43,Rajasthan Royals,Brijesh Sharma,6
+43,Delhi Capitals,P Nissanka,7
+43,Delhi Capitals,KL Rahul,154
+43,Delhi Capitals,N Rana,124
+43,Delhi Capitals,T Stubbs,41
+43,Delhi Capitals,Ashutosh Sharma,26
+43,Delhi Capitals,Sameer Rizvi,22
+43,Delhi Capitals,AR Patel,171
+43,Delhi Capitals,KA Jamieson,14
+43,Delhi Capitals,MA Starc,52
+43,Delhi Capitals,Kuldeep Yadav,107
+43,Delhi Capitals,T Natarajan,72
+43,Delhi Capitals,Delhi Capitals Substitute 12,66
+44,Mumbai Indians,Raghu Sharma,0
+44,Mumbai Indians,WG Jacks,22
+44,Mumbai Indians,RD Rickelton,20
+44,Mumbai Indians,Naman Dhir,31
+44,Mumbai Indians,SA Yadav,174
+44,Mumbai Indians,Tilak Varma,62
+44,Mumbai Indians,HH Pandya,159
+44,Mumbai Indians,R Minz,3
+44,Mumbai Indians,Krish Bhagat,2
+44,Mumbai Indians,TA Boult,123
+44,Mumbai Indians,JJ Bumrah,152
+44,Mumbai Indians,AM Ghazanfar,6
+44,Chennai Super Kings,Mukesh Choudhary,18
+44,Chennai Super Kings,SV Samson,184
+44,Chennai Super Kings,RD Gaikwad,79
+44,Chennai Super Kings,Urvil Patel,4
+44,Chennai Super Kings,Kartik Sharma,5
+44,Chennai Super Kings,D Brevis,21
+44,Chennai Super Kings,S Dube,87
+44,Chennai Super Kings,J Overton,10
+44,Chennai Super Kings,RS Ghosh,0
+44,Chennai Super Kings,PR Veer,2
+44,Chennai Super Kings,Noor Ahmad,45
+44,Chennai Super Kings,A Kamboj,19
+45,Sunrisers Hyderabad,Sakib Hussain,5
+45,Sunrisers Hyderabad,Abhishek Sharma,86
+45,Sunrisers Hyderabad,TM Head,47
+45,Sunrisers Hyderabad,Ishan Kishan,128
+45,Sunrisers Hyderabad,H Klaasen,58
+45,Sunrisers Hyderabad,R Smaran,0
+45,Sunrisers Hyderabad,Aniket Verma,23
+45,Sunrisers Hyderabad,S Arora,8
+45,Sunrisers Hyderabad,PJ Cummins,74
+45,Sunrisers Hyderabad,Shivang Kumar,7
+45,Sunrisers Hyderabad,HV Patel,121
+45,Sunrisers Hyderabad,E Malinga,16
+45,Kolkata Knight Riders,VG Arora,40
+45,Kolkata Knight Riders,AM Rahane,206
+45,Kolkata Knight Riders,FH Allen,5
+45,Kolkata Knight Riders,A Raghuvanshi,30
+45,Kolkata Knight Riders,RK Singh,66
+45,Kolkata Knight Riders,C Green,37
+45,Kolkata Knight Riders,R Powell,34
+45,Kolkata Knight Riders,MK Pandey,174
+45,Kolkata Knight Riders,SP Narine,195
+45,Kolkata Knight Riders,AS Roy,19
+45,Kolkata Knight Riders,Kartik Tyagi,28
+45,Kolkata Knight Riders,CV Varun,89
+46,Punjab Kings,Priyansh Arya,25
+46,Punjab Kings,P Simran Singh,60
+46,Punjab Kings,C Connolly,8
+46,Punjab Kings,SS Iyer,141
+46,Punjab Kings,N Wadhera,44
+46,Punjab Kings,Suryansh Shedge,6
+46,Punjab Kings,MP Stoinis,118
+46,Punjab Kings,M Jansen,44
+46,Punjab Kings,XC Bartlett,11
+46,Punjab Kings,Vijaykumar Vyshak,23
+46,Punjab Kings,Arshdeep Singh,91
+46,Punjab Kings,YS Chahal,183
+46,Gujarat Titans,Mohammed Siraj,117
+46,Gujarat Titans,B Sai Sudharsan,49
+46,Gujarat Titans,Shubman Gill,126
+46,Gujarat Titans,JC Buttler,130
+46,Gujarat Titans,N Sindhu,0
+46,Gujarat Titans,Washington Sundar,75
+46,Gujarat Titans,R Tewatia,116
+46,Gujarat Titans,JO Holder,49
+46,Gujarat Titans,Arshad Khan,20
+46,Gujarat Titans,Rashid Khan,145
+46,Gujarat Titans,K Rabada,93
+46,Gujarat Titans,MJ Suthar,4
+47,Lucknow Super Giants,M Siddharth,8
+47,Lucknow Super Giants,MR Marsh,63
+47,Lucknow Super Giants,JP Inglis,12
+47,Lucknow Super Giants,N Pooran,98
+47,Lucknow Super Giants,RR Pant,133
+47,Lucknow Super Giants,AK Markram,65
+47,Lucknow Super Giants,Akshat Raghuwanshi,0
+47,Lucknow Super Giants,Himmat Singh,6
+47,Lucknow Super Giants,Mohammed Shami,127
+47,Lucknow Super Giants,Mohsin Khan,28
+47,Lucknow Super Giants,Avesh Khan,80
+47,Lucknow Super Giants,Prince Yadav,14
+47,Mumbai Indians,Raghu Sharma,1
+47,Mumbai Indians,RD Rickelton,21
+47,Mumbai Indians,RG Sharma,276
+47,Mumbai Indians,Tilak Varma,63
+47,Mumbai Indians,SA Yadav,175
+47,Mumbai Indians,Naman Dhir,32
+47,Mumbai Indians,WG Jacks,23
+47,Mumbai Indians,RA Bawa,5
+47,Mumbai Indians,C Bosch,4
+47,Mumbai Indians,DL Chahar,98
+47,Mumbai Indians,JJ Bumrah,153
+47,Mumbai Indians,AM Ghazanfar,7
+48,Delhi Capitals,P Nissanka,8
+48,Delhi Capitals,KL Rahul,155
+48,Delhi Capitals,N Rana,125
+48,Delhi Capitals,KK Nair,85
+48,Delhi Capitals,AR Patel,172
+48,Delhi Capitals,T Stubbs,42
+48,Delhi Capitals,Sameer Rizvi,23
+48,Delhi Capitals,Ashutosh Sharma,27
+48,Delhi Capitals,MA Starc,53
+48,Delhi Capitals,L Ngidi,23
+48,Delhi Capitals,Kuldeep Yadav,108
+48,Delhi Capitals,T Natarajan,73
+48,Chennai Super Kings,SV Samson,185
+48,Chennai Super Kings,RD Gaikwad,80
+48,Chennai Super Kings,Urvil Patel,5
+48,Chennai Super Kings,Kartik Sharma,6
+48,Chennai Super Kings,D Brevis,22
+48,Chennai Super Kings,J Overton,11
+48,Chennai Super Kings,AJ Hosein,5
+48,Chennai Super Kings,Noor Ahmad,46
+48,Chennai Super Kings,A Kamboj,20
+48,Chennai Super Kings,Mukesh Choudhary,19
+48,Chennai Super Kings,Gurjapneet Singh,5
+48,Chennai Super Kings,Chennai Super Kings Substitute 12,208
+49,Sunrisers Hyderabad,Harsh Dubey,10
+49,Sunrisers Hyderabad,Abhishek Sharma,87
+49,Sunrisers Hyderabad,TM Head,48
+49,Sunrisers Hyderabad,Ishan Kishan,129
+49,Sunrisers Hyderabad,H Klaasen,59
+49,Sunrisers Hyderabad,Nithish Kumar Reddy,37
+49,Sunrisers Hyderabad,S Arora,9
+49,Sunrisers Hyderabad,R Smaran,1
+49,Sunrisers Hyderabad,PJ Cummins,75
+49,Sunrisers Hyderabad,Shivang Kumar,8
+49,Sunrisers Hyderabad,E Malinga,17
+49,Sunrisers Hyderabad,Sakib Hussain,6
+49,Punjab Kings,YS Chahal,184
+49,Punjab Kings,Priyansh Arya,26
+49,Punjab Kings,P Simran Singh,61
+49,Punjab Kings,C Connolly,9
+49,Punjab Kings,SS Iyer,142
+49,Punjab Kings,MP Stoinis,119
+49,Punjab Kings,Suryansh Shedge,7
+49,Punjab Kings,Shashank Singh,49
+49,Punjab Kings,M Jansen,45
+49,Punjab Kings,Vijaykumar Vyshak,24
+49,Punjab Kings,LH Ferguson,50
+49,Punjab Kings,Arshdeep Singh,92
+50,Lucknow Super Giants,MP Yadav,7
+50,Lucknow Super Giants,MR Marsh,64
+50,Lucknow Super Giants,AA Kulkarni,2
+50,Lucknow Super Giants,N Pooran,99
+50,Lucknow Super Giants,RR Pant,134
+50,Lucknow Super Giants,AK Markram,66
+50,Lucknow Super Giants,Akshat Raghuwanshi,1
+50,Lucknow Super Giants,Himmat Singh,7
+50,Lucknow Super Giants,Shahbaz Ahmed,59
+50,Lucknow Super Giants,DS Rathi,19
+50,Lucknow Super Giants,Mohammed Shami,128
+50,Lucknow Super Giants,Prince Yadav,15
+50,Royal Challengers Bengaluru,Suyash Sharma,35
+50,Royal Challengers Bengaluru,JG Bethell,5
+50,Royal Challengers Bengaluru,V Kohli,275
+50,Royal Challengers Bengaluru,D Padikkal,83
+50,Royal Challengers Bengaluru,RM Patidar,51
+50,Royal Challengers Bengaluru,JM Sharma,64
+50,Royal Challengers Bengaluru,TH David,59
+50,Royal Challengers Bengaluru,KH Pandya,151
+50,Royal Challengers Bengaluru,R Shepherd,27
+50,Royal Challengers Bengaluru,B Kumar,199
+50,Royal Challengers Bengaluru,JR Hazlewood,45
+50,Royal Challengers Bengaluru,Rasikh Salam,18
+51,Delhi Capitals,Kuldeep Yadav,109
+51,Delhi Capitals,P Nissanka,9
+51,Delhi Capitals,KL Rahul,156
+51,Delhi Capitals,N Rana,126
+51,Delhi Capitals,Sameer Rizvi,24
+51,Delhi Capitals,T Stubbs,43
+51,Delhi Capitals,AR Patel,173
+51,Delhi Capitals,Ashutosh Sharma,28
+51,Delhi Capitals,V Nigam,18
+51,Delhi Capitals,MA Starc,54
+51,Delhi Capitals,L Ngidi,24
+51,Delhi Capitals,Mukesh Kumar,38
+51,Kolkata Knight Riders,CV Varun,90
+51,Kolkata Knight Riders,AM Rahane,207
+51,Kolkata Knight Riders,FH Allen,6
+51,Kolkata Knight Riders,A Raghuvanshi,31
+51,Kolkata Knight Riders,C Green,38
+51,Kolkata Knight Riders,R Powell,35
+51,Kolkata Knight Riders,MK Pandey,175
+51,Kolkata Knight Riders,RK Singh,67
+51,Kolkata Knight Riders,SP Narine,196
+51,Kolkata Knight Riders,AS Roy,20
+51,Kolkata Knight Riders,Kartik Tyagi,29
+51,Kolkata Knight Riders,VG Arora,41
+52,Gujarat Titans,R Sai Kishore,25
+52,Gujarat Titans,B Sai Sudharsan,50
+52,Gujarat Titans,Shubman Gill,127
+52,Gujarat Titans,JC Buttler,131
+52,Gujarat Titans,Washington Sundar,76
+52,Gujarat Titans,JO Holder,50
+52,Gujarat Titans,R Tewatia,117
+52,Gujarat Titans,N Sindhu,1
+52,Gujarat Titans,Rashid Khan,146
+52,Gujarat Titans,Arshad Khan,21
+52,Gujarat Titans,K Rabada,94
+52,Gujarat Titans,Mohammed Siraj,118
+52,Rajasthan Royals,Yash Raj Punja,2
+52,Rajasthan Royals,YBK Jaiswal,76
+52,Rajasthan Royals,V Suryavanshi,17
+52,Rajasthan Royals,Dhruv Jurel,51
+52,Rajasthan Royals,SO Hetmyer,93
+52,Rajasthan Royals,RA Jadeja,263
+52,Rajasthan Royals,D Ferreira,12
+52,Rajasthan Royals,SB Dubey,16
+52,Rajasthan Royals,MD Shanaka,4
+52,Rajasthan Royals,JC Archer,62
+52,Rajasthan Royals,TU Deshpande,51
+52,Rajasthan Royals,Brijesh Sharma,7
+53,Lucknow Super Giants,JP Inglis,13
+53,Lucknow Super Giants,MR Marsh,65
+53,Lucknow Super Giants,N Pooran,100
+53,Lucknow Super Giants,RR Pant,135
+53,Lucknow Super Giants,AK Markram,67
+53,Lucknow Super Giants,Akshat Raghuwanshi,2
+53,Lucknow Super Giants,Shahbaz Ahmed,60
+53,Lucknow Super Giants,Himmat Singh,8
+53,Lucknow Super Giants,Mohammed Shami,129
+53,Lucknow Super Giants,Avesh Khan,81
+53,Lucknow Super Giants,Prince Yadav,16
+53,Lucknow Super Giants,DS Rathi,20
+53,Chennai Super Kings,Mukesh Choudhary,20
+53,Chennai Super Kings,SV Samson,186
+53,Chennai Super Kings,RD Gaikwad,81
+53,Chennai Super Kings,Urvil Patel,6
+53,Chennai Super Kings,Kartik Sharma,7
+53,Chennai Super Kings,D Brevis,23
+53,Chennai Super Kings,S Dube,88
+53,Chennai Super Kings,PR Veer,3
+53,Chennai Super Kings,J Overton,12
+53,Chennai Super Kings,AJ Hosein,6
+53,Chennai Super Kings,Noor Ahmad,47
+53,Chennai Super Kings,A Kamboj,21
+54,Mumbai Indians,Raghu Sharma,2
+54,Mumbai Indians,RD Rickelton,22
+54,Mumbai Indians,RG Sharma,277
+54,Mumbai Indians,Naman Dhir,33
+54,Mumbai Indians,SA Yadav,176
+54,Mumbai Indians,Tilak Varma,64
+54,Mumbai Indians,WG Jacks,24
+54,Mumbai Indians,RA Bawa,6
+54,Mumbai Indians,C Bosch,5
+54,Mumbai Indians,DL Chahar,99
+54,Mumbai Indians,JJ Bumrah,154
+54,Mumbai Indians,AM Ghazanfar,8
+54,Royal Challengers Bengaluru,Suyash Sharma,36
+54,Royal Challengers Bengaluru,JG Bethell,6
+54,Royal Challengers Bengaluru,V Kohli,276
+54,Royal Challengers Bengaluru,D Padikkal,84
+54,Royal Challengers Bengaluru,RM Patidar,52
+54,Royal Challengers Bengaluru,KH Pandya,152
+54,Royal Challengers Bengaluru,JM Sharma,65
+54,Royal Challengers Bengaluru,TH David,60
+54,Royal Challengers Bengaluru,R Shepherd,28
+54,Royal Challengers Bengaluru,Rasikh Salam,19
+54,Royal Challengers Bengaluru,B Kumar,200
+54,Royal Challengers Bengaluru,JR Hazlewood,46
+55,Punjab Kings,Yash Thakur,21
+55,Punjab Kings,Priyansh Arya,27
+55,Punjab Kings,P Simran Singh,62
+55,Punjab Kings,SS Iyer,143
+55,Punjab Kings,C Connolly,10
+55,Punjab Kings,MP Stoinis,120
+55,Punjab Kings,Shashank Singh,50
+55,Punjab Kings,Suryansh Shedge,8
+55,Punjab Kings,M Jansen,46
+55,Punjab Kings,BJ Dwarshuis,0
+55,Punjab Kings,Arshdeep Singh,93
+55,Punjab Kings,YS Chahal,185
+55,Delhi Capitals,Mukesh Kumar,39
+55,Delhi Capitals,KL Rahul,157
+55,Delhi Capitals,Abishek Porel,33
+55,Delhi Capitals,SU Parakh,1
+55,Delhi Capitals,T Stubbs,44
+55,Delhi Capitals,AR Patel,174
+55,Delhi Capitals,DA Miller,149
+55,Delhi Capitals,Ashutosh Sharma,29
+55,Delhi Capitals,M Tiwari,2
+55,Delhi Capitals,Auqib Nabi,3
+55,Delhi Capitals,MA Starc,55
+55,Delhi Capitals,L Ngidi,25
+56,Gujarat Titans,M Prasidh Krishna,73
+56,Gujarat Titans,B Sai Sudharsan,51
+56,Gujarat Titans,Shubman Gill,128
+56,Gujarat Titans,JC Buttler,132
+56,Gujarat Titans,N Sindhu,2
+56,Gujarat Titans,Washington Sundar,77
+56,Gujarat Titans,JO Holder,51
+56,Gujarat Titans,R Tewatia,118
+56,Gujarat Titans,Rashid Khan,147
+56,Gujarat Titans,Arshad Khan,22
+56,Gujarat Titans,K Rabada,95
+56,Gujarat Titans,Mohammed Siraj,119
+56,Sunrisers Hyderabad,Sakib Hussain,7
+56,Sunrisers Hyderabad,TM Head,49
+56,Sunrisers Hyderabad,Abhishek Sharma,88
+56,Sunrisers Hyderabad,Ishan Kishan,130
+56,Sunrisers Hyderabad,R Smaran,2
+56,Sunrisers Hyderabad,H Klaasen,60
+56,Sunrisers Hyderabad,S Arora,10
+56,Sunrisers Hyderabad,Nithish Kumar Reddy,38
+56,Sunrisers Hyderabad,PJ Cummins,76
+56,Sunrisers Hyderabad,Shivang Kumar,9
+56,Sunrisers Hyderabad,PP Hinge,4
+56,Sunrisers Hyderabad,E Malinga,18
+57,Kolkata Knight Riders,SR Dubey,0
+57,Kolkata Knight Riders,AM Rahane,208
+57,Kolkata Knight Riders,FH Allen,7
+57,Kolkata Knight Riders,A Raghuvanshi,32
+57,Kolkata Knight Riders,C Green,39
+57,Kolkata Knight Riders,RK Singh,68
+57,Kolkata Knight Riders,R Powell,36
+57,Kolkata Knight Riders,MK Pandey,176
+57,Kolkata Knight Riders,SP Narine,197
+57,Kolkata Knight Riders,AS Roy,21
+57,Kolkata Knight Riders,Kartik Tyagi,30
+57,Kolkata Knight Riders,VG Arora,42
+57,Royal Challengers Bengaluru,JA Duffy,3
+57,Royal Challengers Bengaluru,JG Bethell,7
+57,Royal Challengers Bengaluru,V Kohli,277
+57,Royal Challengers Bengaluru,D Padikkal,85
+57,Royal Challengers Bengaluru,RM Patidar,53
+57,Royal Challengers Bengaluru,TH David,61
+57,Royal Challengers Bengaluru,JM Sharma,66
+57,Royal Challengers Bengaluru,VR Iyer,63
+57,Royal Challengers Bengaluru,KH Pandya,153
+57,Royal Challengers Bengaluru,B Kumar,201
+57,Royal Challengers Bengaluru,Rasikh Salam,20
+57,Royal Challengers Bengaluru,JR Hazlewood,47
+58,Punjab Kings,Priyansh Arya,28
+58,Punjab Kings,P Simran Singh,63
+58,Punjab Kings,C Connolly,11
+58,Punjab Kings,SS Iyer,144
+58,Punjab Kings,Suryansh Shedge,9
+58,Punjab Kings,Shashank Singh,51
+58,Punjab Kings,Azmatullah Omarzai,17
+58,Punjab Kings,M Jansen,47
+58,Punjab Kings,Vishnu Vinod,6
+58,Punjab Kings,XC Bartlett,12
+58,Punjab Kings,Arshdeep Singh,94
+58,Punjab Kings,YS Chahal,186
+58,Mumbai Indians,Raghu Sharma,3
+58,Mumbai Indians,RG Sharma,278
+58,Mumbai Indians,RD Rickelton,23
+58,Mumbai Indians,Naman Dhir,34
+58,Mumbai Indians,Tilak Varma,65
+58,Mumbai Indians,SE Rutherford,30
+58,Mumbai Indians,WG Jacks,25
+58,Mumbai Indians,RA Bawa,7
+58,Mumbai Indians,C Bosch,6
+58,Mumbai Indians,DL Chahar,100
+58,Mumbai Indians,SN Thakur,112
+58,Mumbai Indians,JJ Bumrah,155
+59,Chennai Super Kings,Gurjapneet Singh,6
+59,Chennai Super Kings,SV Samson,187
+59,Chennai Super Kings,RD Gaikwad,82
+59,Chennai Super Kings,Urvil Patel,7
+59,Chennai Super Kings,Kartik Sharma,8
+59,Chennai Super Kings,D Brevis,24
+59,Chennai Super Kings,S Dube,89
+59,Chennai Super Kings,PR Veer,4
+59,Chennai Super Kings,A Kamboj,22
+59,Chennai Super Kings,Noor Ahmad,48
+59,Chennai Super Kings,SH Johnson,9
+59,Chennai Super Kings,Mukesh Choudhary,21
+59,Lucknow Super Giants,Prince Yadav,17
+59,Lucknow Super Giants,MR Marsh,66
+59,Lucknow Super Giants,JP Inglis,14
+59,Lucknow Super Giants,N Pooran,101
+59,Lucknow Super Giants,Abdul Samad,68
+59,Lucknow Super Giants,MD Choudhary,8
+59,Lucknow Super Giants,AK Markram,68
+59,Lucknow Super Giants,RR Pant,136
+59,Lucknow Super Giants,Shahbaz Ahmed,61
+59,Lucknow Super Giants,Mohammed Shami,130
+59,Lucknow Super Giants,MP Yadav,8
+59,Lucknow Super Giants,Akash Singh,10
+60,Kolkata Knight Riders,M Pathirana,32
+60,Kolkata Knight Riders,AM Rahane,209
+60,Kolkata Knight Riders,FH Allen,8
+60,Kolkata Knight Riders,A Raghuvanshi,33
+60,Kolkata Knight Riders,C Green,40
+60,Kolkata Knight Riders,MK Pandey,177
+60,Kolkata Knight Riders,RK Singh,69
+60,Kolkata Knight Riders,SP Narine,198
+60,Kolkata Knight Riders,AS Roy,22
+60,Kolkata Knight Riders,CV Varun,91
+60,Kolkata Knight Riders,SR Dubey,1
+60,Kolkata Knight Riders,Kartik Tyagi,31
+60,Gujarat Titans,Mohammed Siraj,120
+60,Gujarat Titans,B Sai Sudharsan,52
+60,Gujarat Titans,Shubman Gill,129
+60,Gujarat Titans,N Sindhu,3
+60,Gujarat Titans,JC Buttler,133
+60,Gujarat Titans,R Tewatia,119
+60,Gujarat Titans,JO Holder,52
+60,Gujarat Titans,Washington Sundar,78
+60,Gujarat Titans,Rashid Khan,148
+60,Gujarat Titans,K Rabada,96
+60,Gujarat Titans,Arshad Khan,23
+60,Gujarat Titans,R Sai Kishore,26
+61,Royal Challengers Bengaluru,Rasikh Salam,21
+61,Royal Challengers Bengaluru,JG Bethell,8
+61,Royal Challengers Bengaluru,V Kohli,278
+61,Royal Challengers Bengaluru,D Padikkal,86
+61,Royal Challengers Bengaluru,VR Iyer,64
+61,Royal Challengers Bengaluru,TH David,62
+61,Royal Challengers Bengaluru,JM Sharma,67
+61,Royal Challengers Bengaluru,R Shepherd,29
+61,Royal Challengers Bengaluru,KH Pandya,154
+61,Royal Challengers Bengaluru,B Kumar,202
+61,Royal Challengers Bengaluru,Suyash Sharma,37
+61,Royal Challengers Bengaluru,JR Hazlewood,48
+61,Punjab Kings,YS Chahal,187
+61,Punjab Kings,Priyansh Arya,29
+61,Punjab Kings,P Simran Singh,64
+61,Punjab Kings,C Connolly,12
+61,Punjab Kings,SS Iyer,145
+61,Punjab Kings,Suryansh Shedge,10
+61,Punjab Kings,MP Stoinis,121
+61,Punjab Kings,Shashank Singh,52
+61,Punjab Kings,Azmatullah Omarzai,18
+61,Punjab Kings,Harpreet Brar,50
+61,Punjab Kings,LH Ferguson,51
+61,Punjab Kings,Arshdeep Singh,95
+62,Rajasthan Royals,YBK Jaiswal,77
+62,Rajasthan Royals,V Suryavanshi,18
+62,Rajasthan Royals,Dhruv Jurel,52
+62,Rajasthan Royals,R Parag,93
+62,Rajasthan Royals,D Ferreira,13
+62,Rajasthan Royals,Ravi Singh,0
+62,Rajasthan Royals,SB Dubey,17
+62,Rajasthan Royals,MD Shanaka,5
+62,Rajasthan Royals,JC Archer,63
+62,Rajasthan Royals,AF Milne,10
+62,Rajasthan Royals,Brijesh Sharma,8
+62,Rajasthan Royals,Yash Raj Punja,3
+62,Delhi Capitals,Mukesh Kumar,40
+62,Delhi Capitals,Abishek Porel,34
+62,Delhi Capitals,KL Rahul,158
+62,Delhi Capitals,SU Parakh,2
+62,Delhi Capitals,AR Patel,175
+62,Delhi Capitals,T Stubbs,45
+62,Delhi Capitals,DA Miller,150
+62,Delhi Capitals,Ashutosh Sharma,30
+62,Delhi Capitals,M Tiwari,3
+62,Delhi Capitals,MA Starc,56
+62,Delhi Capitals,L Ngidi,26
+62,Delhi Capitals,T Vijay,0
+63,Chennai Super Kings,Mukesh Choudhary,22
+63,Chennai Super Kings,SV Samson,188
+63,Chennai Super Kings,RD Gaikwad,83
+63,Chennai Super Kings,Urvil Patel,8
+63,Chennai Super Kings,Kartik Sharma,9
+63,Chennai Super Kings,D Brevis,25
+63,Chennai Super Kings,S Dube,90
+63,Chennai Super Kings,PR Veer,5
+63,Chennai Super Kings,AJ Hosein,7
+63,Chennai Super Kings,Noor Ahmad,49
+63,Chennai Super Kings,A Kamboj,23
+63,Chennai Super Kings,SH Johnson,10
+63,Sunrisers Hyderabad,Sakib Hussain,8
+63,Sunrisers Hyderabad,Abhishek Sharma,89
+63,Sunrisers Hyderabad,TM Head,50
+63,Sunrisers Hyderabad,Ishan Kishan,131
+63,Sunrisers Hyderabad,H Klaasen,61
+63,Sunrisers Hyderabad,Nithish Kumar Reddy,39
+63,Sunrisers Hyderabad,S Arora,11
+63,Sunrisers Hyderabad,R Smaran,3
+63,Sunrisers Hyderabad,PJ Cummins,77
+63,Sunrisers Hyderabad,Shivang Kumar,10
+63,Sunrisers Hyderabad,E Malinga,19
+63,Sunrisers Hyderabad,PP Hinge,5
+64,Lucknow Super Giants,DS Rathi,21
+64,Lucknow Super Giants,MR Marsh,67
+64,Lucknow Super Giants,JP Inglis,15
+64,Lucknow Super Giants,N Pooran,102
+64,Lucknow Super Giants,RR Pant,137
+64,Lucknow Super Giants,Abdul Samad,69
+64,Lucknow Super Giants,A Badoni,64
+64,Lucknow Super Giants,Shahbaz Ahmed,62
+64,Lucknow Super Giants,Mohsin Khan,29
+64,Lucknow Super Giants,MP Yadav,9
+64,Lucknow Super Giants,Akash Singh,11
+64,Lucknow Super Giants,Prince Yadav,18
+64,Rajasthan Royals,Yash Raj Punja,4
+64,Rajasthan Royals,YBK Jaiswal,78
+64,Rajasthan Royals,V Suryavanshi,19
+64,Rajasthan Royals,Dhruv Jurel,53
+64,Rajasthan Royals,LG Pretorius,1
+64,Rajasthan Royals,D Ferreira,14
+64,Rajasthan Royals,SB Dubey,18
+64,Rajasthan Royals,MD Shanaka,6
+64,Rajasthan Royals,JC Archer,64
+64,Rajasthan Royals,Sandeep Sharma,141
+64,Rajasthan Royals,SS Mishra,0
+64,Rajasthan Royals,Brijesh Sharma,9
+65,Mumbai Indians,AM Ghazanfar,9
+65,Mumbai Indians,RD Rickelton,24
+65,Mumbai Indians,RG Sharma,279
+65,Mumbai Indians,Naman Dhir,35
+65,Mumbai Indians,SA Yadav,177
+65,Mumbai Indians,Tilak Varma,66
+65,Mumbai Indians,HH Pandya,160
+65,Mumbai Indians,WG Jacks,26
+65,Mumbai Indians,C Bosch,7
+65,Mumbai Indians,DL Chahar,101
+65,Mumbai Indians,JJ Bumrah,156
+65,Mumbai Indians,Raghu Sharma,4
+65,Kolkata Knight Riders,CV Varun,92
+65,Kolkata Knight Riders,A Raghuvanshi,34
+65,Kolkata Knight Riders,AM Rahane,210
+65,Kolkata Knight Riders,FH Allen,9
+65,Kolkata Knight Riders,MK Pandey,178
+65,Kolkata Knight Riders,C Green,41
+65,Kolkata Knight Riders,R Powell,37
+65,Kolkata Knight Riders,RK Singh,70
+65,Kolkata Knight Riders,T Dahiya,0
+65,Kolkata Knight Riders,AS Roy,23
+65,Kolkata Knight Riders,SP Narine,199
+65,Kolkata Knight Riders,Kartik Tyagi,32
+66,Gujarat Titans,M Prasidh Krishna,74
+66,Gujarat Titans,B Sai Sudharsan,53
+66,Gujarat Titans,Shubman Gill,130
+66,Gujarat Titans,JC Buttler,134
+66,Gujarat Titans,R Tewatia,120
+66,Gujarat Titans,Washington Sundar,79
+66,Gujarat Titans,N Sindhu,4
+66,Gujarat Titans,JO Holder,53
+66,Gujarat Titans,Rashid Khan,149
+66,Gujarat Titans,K Rabada,97
+66,Gujarat Titans,Arshad Khan,24
+66,Gujarat Titans,Mohammed Siraj,121
+66,Chennai Super Kings,Gurjapneet Singh,7
+66,Chennai Super Kings,SV Samson,189
+66,Chennai Super Kings,MW Short,8
+66,Chennai Super Kings,RD Gaikwad,84
+66,Chennai Super Kings,Urvil Patel,9
+66,Chennai Super Kings,Kartik Sharma,10
+66,Chennai Super Kings,D Brevis,26
+66,Chennai Super Kings,S Dube,91
+66,Chennai Super Kings,A Kamboj,24
+66,Chennai Super Kings,Noor Ahmad,50
+66,Chennai Super Kings,Mukesh Choudhary,23
+66,Chennai Super Kings,SH Johnson,11
+67,Sunrisers Hyderabad,HV Patel,122
+67,Sunrisers Hyderabad,Abhishek Sharma,90
+67,Sunrisers Hyderabad,TM Head,51
+67,Sunrisers Hyderabad,Ishan Kishan,132
+67,Sunrisers Hyderabad,H Klaasen,62
+67,Sunrisers Hyderabad,Nithish Kumar Reddy,40
+67,Sunrisers Hyderabad,S Arora,12
+67,Sunrisers Hyderabad,R Smaran,4
+67,Sunrisers Hyderabad,PJ Cummins,78
+67,Sunrisers Hyderabad,Shivang Kumar,11
+67,Sunrisers Hyderabad,E Malinga,20
+67,Sunrisers Hyderabad,Sakib Hussain,9
+67,Royal Challengers Bengaluru,Suyash Sharma,38
+67,Royal Challengers Bengaluru,VR Iyer,65
+67,Royal Challengers Bengaluru,V Kohli,279
+67,Royal Challengers Bengaluru,D Padikkal,87
+67,Royal Challengers Bengaluru,RM Patidar,54
+67,Royal Challengers Bengaluru,KH Pandya,155
+67,Royal Challengers Bengaluru,TH David,63
+67,Royal Challengers Bengaluru,JM Sharma,68
+67,Royal Challengers Bengaluru,R Shepherd,30
+67,Royal Challengers Bengaluru,B Kumar,203
+67,Royal Challengers Bengaluru,JR Hazlewood,49
+67,Royal Challengers Bengaluru,Rasikh Salam,22
+68,Lucknow Super Giants,DS Rathi,22
+68,Lucknow Super Giants,JP Inglis,16
+68,Lucknow Super Giants,AA Kulkarni,3
+68,Lucknow Super Giants,N Pooran,103
+68,Lucknow Super Giants,A Badoni,65
+68,Lucknow Super Giants,RR Pant,138
+68,Lucknow Super Giants,Abdul Samad,70
+68,Lucknow Super Giants,MD Choudhary,9
+68,Lucknow Super Giants,Arjun Tendulkar,5
+68,Lucknow Super Giants,Mohammed Shami,131
+68,Lucknow Super Giants,Prince Yadav,19
+68,Lucknow Super Giants,Mohsin Khan,30
+68,Punjab Kings,YS Chahal,188
+68,Punjab Kings,Priyansh Arya,30
+68,Punjab Kings,P Simran Singh,65
+68,Punjab Kings,C Connolly,13
+68,Punjab Kings,SS Iyer,146
+68,Punjab Kings,Suryansh Shedge,11
+68,Punjab Kings,Shashank Singh,53
+68,Punjab Kings,Azmatullah Omarzai,19
+68,Punjab Kings,M Jansen,48
+68,Punjab Kings,Vijaykumar Vyshak,25
+68,Punjab Kings,Arshdeep Singh,96
+68,Punjab Kings,MP Stoinis,122
+69,Rajasthan Royals,YBK Jaiswal,79
+69,Rajasthan Royals,V Suryavanshi,20
+69,Rajasthan Royals,Dhruv Jurel,54
+69,Rajasthan Royals,R Parag,94
+69,Rajasthan Royals,MD Shanaka,7
+69,Rajasthan Royals,D Ferreira,15
+69,Rajasthan Royals,JC Archer,65
+69,Rajasthan Royals,SB Dubey,19
+69,Rajasthan Royals,RA Jadeja,264
+69,Rajasthan Royals,N Burger,15
+69,Rajasthan Royals,Yash Raj Punja,5
+69,Rajasthan Royals,Brijesh Sharma,10
+69,Mumbai Indians,Raghu Sharma,5
+69,Mumbai Indians,RG Sharma,280
+69,Mumbai Indians,RD Rickelton,25
+69,Mumbai Indians,Naman Dhir,36
+69,Mumbai Indians,SA Yadav,178
+69,Mumbai Indians,Tilak Varma,67
+69,Mumbai Indians,WG Jacks,27
+69,Mumbai Indians,HH Pandya,161
+69,Mumbai Indians,C Bosch,8
+69,Mumbai Indians,SN Thakur,113
+69,Mumbai Indians,DL Chahar,102
+69,Mumbai Indians,AM Ghazanfar,10
+70,Delhi Capitals,Kuldeep Yadav,110
+70,Delhi Capitals,Abishek Porel,35
+70,Delhi Capitals,KL Rahul,159
+70,Delhi Capitals,SU Parakh,3
+70,Delhi Capitals,AR Patel,176
+70,Delhi Capitals,DA Miller,151
+70,Delhi Capitals,Ashutosh Sharma,31
+70,Delhi Capitals,T Stubbs,46
+70,Delhi Capitals,M Tiwari,4
+70,Delhi Capitals,Auqib Nabi,4
+70,Delhi Capitals,L Ngidi,27
+70,Delhi Capitals,MA Starc,57
+70,Kolkata Knight Riders,SP Narine,200
+70,Kolkata Knight Riders,AM Rahane,211
+70,Kolkata Knight Riders,FH Allen,10
+70,Kolkata Knight Riders,MK Pandey,179
+70,Kolkata Knight Riders,C Green,42
+70,Kolkata Knight Riders,R Powell,38
+70,Kolkata Knight Riders,RK Singh,71
+70,Kolkata Knight Riders,T Dahiya,1
+70,Kolkata Knight Riders,AS Roy,24
+70,Kolkata Knight Riders,Kartik Tyagi,33
+70,Kolkata Knight Riders,CV Varun,93
+70,Kolkata Knight Riders,SR Dubey,2
+71,Royal Challengers Bengaluru,R Shepherd,31
+71,Royal Challengers Bengaluru,VR Iyer,66
+71,Royal Challengers Bengaluru,V Kohli,280
+71,Royal Challengers Bengaluru,D Padikkal,88
+71,Royal Challengers Bengaluru,RM Patidar,55
+71,Royal Challengers Bengaluru,KH Pandya,156
+71,Royal Challengers Bengaluru,TH David,64
+71,Royal Challengers Bengaluru,JM Sharma,69
+71,Royal Challengers Bengaluru,B Kumar,204
+71,Royal Challengers Bengaluru,JR Hazlewood,50
+71,Royal Challengers Bengaluru,JA Duffy,4
+71,Royal Challengers Bengaluru,Rasikh Salam,23
+71,Gujarat Titans,K Khejroliya,8
+71,Gujarat Titans,B Sai Sudharsan,54
+71,Gujarat Titans,Shubman Gill,131
+71,Gujarat Titans,JC Buttler,135
+71,Gujarat Titans,N Sindhu,5
+71,Gujarat Titans,Washington Sundar,80
+71,Gujarat Titans,JO Holder,54
+71,Gujarat Titans,R Tewatia,121
+71,Gujarat Titans,Rashid Khan,150
+71,Gujarat Titans,K Rabada,98
+71,Gujarat Titans,Mohammed Siraj,122
+71,Gujarat Titans,M Prasidh Krishna,75
+72,Rajasthan Royals,YBK Jaiswal,80
+72,Rajasthan Royals,V Suryavanshi,21
+72,Rajasthan Royals,Dhruv Jurel,55
+72,Rajasthan Royals,R Parag,95
+72,Rajasthan Royals,D Ferreira,16
+72,Rajasthan Royals,MD Shanaka,8
+72,Rajasthan Royals,RA Jadeja,265
+72,Rajasthan Royals,JC Archer,66
+72,Rajasthan Royals,N Burger,16
+72,Rajasthan Royals,SS Mishra,1
+72,Rajasthan Royals,Brijesh Sharma,11
+72,Rajasthan Royals,Yash Raj Punja,6
+72,Sunrisers Hyderabad,PP Hinge,6
+72,Sunrisers Hyderabad,Abhishek Sharma,91
+72,Sunrisers Hyderabad,TM Head,52
+72,Sunrisers Hyderabad,Ishan Kishan,133
+72,Sunrisers Hyderabad,R Smaran,5
+72,Sunrisers Hyderabad,H Klaasen,63
+72,Sunrisers Hyderabad,Nithish Kumar Reddy,41
+72,Sunrisers Hyderabad,Salil Arora,0
+72,Sunrisers Hyderabad,PJ Cummins,79
+72,Sunrisers Hyderabad,Shivang Kumar,12
+72,Sunrisers Hyderabad,E Malinga,21
+72,Sunrisers Hyderabad,Sakib Hussain,10
+73,Gujarat Titans,B Sai Sudharsan,55
+73,Gujarat Titans,Shubman Gill,132
+73,Gujarat Titans,JC Buttler,136
+73,Gujarat Titans,N Sindhu,6
+73,Gujarat Titans,Washington Sundar,81
+73,Gujarat Titans,JO Holder,55
+73,Gujarat Titans,R Tewatia,122
+73,Gujarat Titans,Rashid Khan,151
+73,Gujarat Titans,R Sai Kishore,27
+73,Gujarat Titans,K Rabada,99
+73,Gujarat Titans,Mohammed Siraj,123
+73,Gujarat Titans,M Prasidh Krishna,76
+73,Rajasthan Royals,YBK Jaiswal,81
+73,Rajasthan Royals,V Suryavanshi,22
+73,Rajasthan Royals,Dhruv Jurel,56
+73,Rajasthan Royals,R Parag,96
+73,Rajasthan Royals,D Ferreira,17
+73,Rajasthan Royals,MD Shanaka,9
+73,Rajasthan Royals,RA Jadeja,266
+73,Rajasthan Royals,JC Archer,67
+73,Rajasthan Royals,N Burger,17
+73,Rajasthan Royals,SS Mishra,2
+73,Rajasthan Royals,Brijesh Sharma,12
+73,Rajasthan Royals,Yash Raj Punja,7
+74,Royal Challengers Bengaluru,R Shepherd,32
+74,Royal Challengers Bengaluru,VR Iyer,67
+74,Royal Challengers Bengaluru,V Kohli,281
+74,Royal Challengers Bengaluru,D Padikkal,89
+74,Royal Challengers Bengaluru,RM Patidar,56
+74,Royal Challengers Bengaluru,KH Pandya,157
+74,Royal Challengers Bengaluru,TH David,65
+74,Royal Challengers Bengaluru,JM Sharma,70
+74,Royal Challengers Bengaluru,B Kumar,205
+74,Royal Challengers Bengaluru,JR Hazlewood,51
+74,Royal Challengers Bengaluru,JA Duffy,5
+74,Royal Challengers Bengaluru,Rasikh Salam,24
+74,Gujarat Titans,B Sai Sudharsan,56
+74,Gujarat Titans,Shubman Gill,133
+74,Gujarat Titans,JC Buttler,137
+74,Gujarat Titans,N Sindhu,7
+74,Gujarat Titans,Washington Sundar,82
+74,Gujarat Titans,JO Holder,56
+74,Gujarat Titans,R Tewatia,123
+74,Gujarat Titans,Rashid Khan,152
+74,Gujarat Titans,Arshad Khan,25
+74,Gujarat Titans,K Rabada,100
+74,Gujarat Titans,Mohammed Siraj,124
+74,Gujarat Titans,M Prasidh Krishna,77

@@ -1,8 +1,8 @@
-# FtpSync (Pettagam)
+# FTP-SYNC (Pettagam)
 
-[Download APK](https://github.com/heisenricher/pettagam/releases/download/v1/app-release.apk)
+[Download APK](https://github.com/heisenricher/pettagam/releases/download/v2/app-release.apk)
 
-FtpSync is a clean and lightweight Android application that lets you connect your phone to Windows Explorer over your local Wi-Fi. It uses a custom FTP server running directly on your device. It does not send your data to any cloud service. It is fully local and open source.
+FTP-SYNC is a clean and lightweight Android application that lets you connect your phone to Windows Explorer over your local Wi-Fi. It uses a custom FTP server running directly on your device. It does not send your data to any cloud service. It is fully local and open source.
 
 ## Features
 
@@ -21,7 +21,7 @@ The Android app starts an FTP server on port 2121. Windows Explorer connects to 
 ### Windows pairing
 
 1. Connect your phone and PC to the same Wi-Fi network.
-2. Open the FtpSync app and tap Start Sharing.
+2. Open the FTP-SYNC app and tap Start Sharing.
 3. Open a PowerShell console, navigate to the folder where you saved the files, and run:
    ```powershell
    Set-ExecutionPolicy Bypass -Scope Process

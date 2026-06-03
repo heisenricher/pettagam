@@ -22,12 +22,18 @@ import com.ftpsync.app.ui.theme.FtpSyncTheme
 
 class MainActivity : ComponentActivity() {
 
+    private var isStartingServerFlow = false
+
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
         val granted = permissions.entries.all { it.value }
         if (granted) {
-            checkStoragePermissionAndStart()
+            if (isStartingServerFlow) {
+                checkStoragePermissionAndStart()
+            } else {
+                checkStoragePermissionOnly()
+            }
         } else {
             Toast.makeText(this, "Permissions required to access files.", Toast.LENGTH_LONG).show()
         }
@@ -38,7 +44,9 @@ class MainActivity : ComponentActivity() {
     ) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             if (Environment.isExternalStorageManager()) {
-                startFtpService()
+                if (isStartingServerFlow) {
+                    startFtpService()
+                }
             } else {
                 Toast.makeText(this, "Manage Storage permission is required.", Toast.LENGTH_LONG).show()
             }
@@ -47,6 +55,10 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        // Request permissions immediately when opening the app
+        requestAppPermissions(autoStart = false)
+
         setContent {
             FtpSyncTheme {
                 Surface(
@@ -55,7 +67,7 @@ class MainActivity : ComponentActivity() {
                     DashboardScreen(
                         onToggleServer = { start ->
                             if (start) {
-                                requestAppPermissions()
+                                requestAppPermissions(autoStart = true)
                             } else {
                                 stopFtpService()
                             }
@@ -66,7 +78,8 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun requestAppPermissions() {
+    private fun requestAppPermissions(autoStart: Boolean) {
+        isStartingServerFlow = autoStart
         val permissions = mutableListOf<String>()
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
             permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -81,9 +94,29 @@ class MainActivity : ComponentActivity() {
         }
 
         if (allGranted) {
-            checkStoragePermissionAndStart()
+            if (autoStart) {
+                checkStoragePermissionAndStart()
+            } else {
+                checkStoragePermissionOnly()
+            }
         } else {
             requestPermissionLauncher.launch(permissions.toTypedArray())
+        }
+    }
+
+    private fun checkStoragePermissionOnly() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            if (!Environment.isExternalStorageManager()) {
+                try {
+                    val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION).apply {
+                        data = Uri.parse("package:$packageName")
+                    }
+                    manageStorageLauncher.launch(intent)
+                } catch (e: Exception) {
+                    val intent = Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION)
+                    manageStorageLauncher.launch(intent)
+                }
+            }
         }
     }
 

@@ -2,6 +2,7 @@ package com.ftpsync.app.ui.screens
 
 import android.graphics.Bitmap
 import android.graphics.Color as AndroidColor
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -52,7 +53,7 @@ fun DashboardScreen(
             horizontalAlignment = Alignment.Start
         ) {
             Text(
-                text = "FtpSync",
+                text = "FTP-SYNC",
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 color = DarkText,

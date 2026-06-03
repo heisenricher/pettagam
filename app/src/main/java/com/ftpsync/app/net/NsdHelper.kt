@@ -6,7 +6,7 @@ import android.net.nsd.NsdServiceInfo
 import android.util.Log
 
 class NsdHelper(context: Context) {
-    private val nsdManager = context.getSystemService(Context.NSD_SERVICE_SERVICE) as NsdManager
+    private val nsdManager = context.getSystemService(Context.NSD_SERVICE) as NsdManager
     private var registrationListener: NsdManager.RegistrationListener? = null
     var serviceName: String = "FtpSyncDevice"
 
