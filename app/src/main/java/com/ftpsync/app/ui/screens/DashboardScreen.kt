@@ -20,10 +20,13 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import android.content.Context
 import android.os.Environment
 import android.os.StatFs
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.ui.platform.LocalContext
 import com.ftpsync.app.service.FtpServerService
 import com.ftpsync.app.ui.theme.*
 import com.google.zxing.BarcodeFormat
@@ -46,6 +49,13 @@ fun DashboardScreen(
     val ipAddress = (serverState as? FtpServerService.ServerState.Running)?.ip ?: ""
     val port = (serverState as? FtpServerService.ServerState.Running)?.port ?: 2121
     val ftpUri = if (isRunning) "ftp://$ipAddress:$port" else ""
+
+    val context = LocalContext.current
+    val prefs = remember { context.getSharedPreferences("ftp_settings", Context.MODE_PRIVATE) }
+    
+    var username by remember { mutableStateOf(prefs.getString("username", "android") ?: "android") }
+    var password by remember { mutableStateOf(prefs.getString("password", "android") ?: "android") }
+    var anonymousAllowed by remember { mutableStateOf(prefs.getBoolean("anonymous_allowed", false)) }
 
     Column(
         modifier = Modifier
@@ -138,7 +148,26 @@ fun DashboardScreen(
                         color = SlateGray
                     )
                     
-                    Spacer(modifier = Modifier.height(12.dp))
+                    Spacer(modifier = Modifier.height(8.dp))
+                    
+                    if (!anonymousAllowed) {
+                        Text(
+                            text = "Login: $username / Pass: $password",
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Medium,
+                            color = DarkText,
+                            fontFamily = FontFamily.Monospace
+                        )
+                    } else {
+                        Text(
+                            text = "Anonymous Login Enabled",
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Medium,
+                            color = ActiveGreen
+                        )
+                    }
+                    
+                    Spacer(modifier = Modifier.height(10.dp))
 
                     // QR Code
                     val qrBitmap = remember(ftpUri) { generateQrCode(ftpUri) }
@@ -334,6 +363,101 @@ fun DashboardScreen(
                     fontSize = 10.sp,
                     color = SlateGray
                 )
+            }
+        }
+
+        // Access Settings Card (only shown when server is stopped)
+        if (!isRunning) {
+            var isSettingsExpanded by remember { mutableStateOf(false) }
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 12.dp)
+                    .shadow(2.dp, shape = RoundedCornerShape(16.dp), ambientColor = SlateGray),
+                colors = CardDefaults.cardColors(containerColor = PureWhite),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Column(
+                    modifier = Modifier.padding(16.dp)
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { isSettingsExpanded = !isSettingsExpanded },
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "Access Settings",
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = DarkText
+                        )
+                        Text(
+                            text = if (isSettingsExpanded) "Collapse" else "Configure",
+                            fontSize = 12.sp,
+                            color = PrimaryBlue,
+                            fontWeight = FontWeight.Medium
+                        )
+                    }
+
+                    if (isSettingsExpanded) {
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        OutlinedTextField(
+                            value = username,
+                            onValueChange = {
+                                username = it
+                                prefs.edit().putString("username", it).apply()
+                            },
+                            label = { Text("Username") },
+                            modifier = Modifier.fillMaxWidth(),
+                            singleLine = true
+                        )
+
+                        Spacer(modifier = Modifier.height(12.dp))
+
+                        OutlinedTextField(
+                            value = password,
+                            onValueChange = {
+                                password = it
+                                prefs.edit().putString("password", it).apply()
+                            },
+                            label = { Text("Password") },
+                            modifier = Modifier.fillMaxWidth(),
+                            singleLine = true
+                        )
+
+                        Spacer(modifier = Modifier.height(12.dp))
+
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Column {
+                                Text(
+                                    text = "Allow Anonymous Login",
+                                    fontSize = 13.sp,
+                                    fontWeight = FontWeight.Medium,
+                                    color = DarkText
+                                )
+                                Text(
+                                    text = "Lets PC connect without password",
+                                    fontSize = 11.sp,
+                                    color = SlateGray
+                                )
+                            }
+                            Switch(
+                                checked = anonymousAllowed,
+                                onCheckedChange = {
+                                    anonymousAllowed = it
+                                    prefs.edit().putBoolean("anonymous_allowed", it).apply()
+                                }
+                            )
+                        }
+                    }
+                }
             }
         }
 

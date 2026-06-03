@@ -158,7 +158,16 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun startFtpService() {
-        val intent = Intent(this, FtpServerService::class.java)
+        val prefs = getSharedPreferences("ftp_settings", MODE_PRIVATE)
+        val username = prefs.getString("username", "android") ?: "android"
+        val password = prefs.getString("password", "android") ?: "android"
+        val anonymousAllowed = prefs.getBoolean("anonymous_allowed", false)
+
+        val intent = Intent(this, FtpServerService::class.java).apply {
+            putExtra("username", username)
+            putExtra("password", password)
+            putExtra("anonymousAllowed", anonymousAllowed)
+        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             startForegroundService(intent)
         } else {

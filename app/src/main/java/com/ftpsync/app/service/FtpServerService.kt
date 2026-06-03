@@ -22,6 +22,7 @@ import org.apache.ftpserver.ftplet.DefaultFtplet
 import org.apache.ftpserver.ftplet.FtpSession
 import org.apache.ftpserver.ftplet.FtpRequest
 import org.apache.ftpserver.ftplet.FtpletResult
+import org.apache.ftpserver.ConnectionConfigFactory
 import org.apache.ftpserver.listener.ListenerFactory
 import org.apache.ftpserver.usermanager.impl.BaseUser
 import org.apache.ftpserver.usermanager.impl.WritePermission
@@ -93,7 +94,7 @@ class FtpServerService : Service() {
             } else {
                 startForeground(NOTIFICATION_ID, notification)
             }
-            startFtpServer()
+            startFtpServer(intent)
         }
         return START_NOT_STICKY
     }
@@ -106,32 +107,49 @@ class FtpServerService : Service() {
 
     override fun onBind(intent: Intent?): IBinder? = null
 
-    private fun startFtpServer() {
+    private fun startFtpServer(intent: Intent?) {
         if (ftpServer != null && !ftpServer!!.isStopped) return
+
+        val username = intent?.getStringExtra("username") ?: "android"
+        val password = intent?.getStringExtra("password") ?: "android"
+        val anonymousAllowed = intent?.getBooleanExtra("anonymousAllowed", false) ?: false
 
         try {
             val serverFactory = FtpServerFactory()
+            val localIp = getWifiIpAddress()
 
             // Configure listener on port 2121
             val listenerFactory = ListenerFactory()
             listenerFactory.port = FTP_PORT
+            listenerFactory.setServerAddress(localIp)
+            listenerFactory.setIdleTimeout(300) // 5 minutes session idle timeout
             serverFactory.addListener("default", listenerFactory.createListener())
 
-            // Configure anonymous user with full access to external storage
+            // Configure connection and login limits (DoS defense)
+            val connectionConfigFactory = ConnectionConfigFactory()
+            connectionConfigFactory.setMaxLogins(3)
+            connectionConfigFactory.setMaxLoginFailures(3)
+            connectionConfigFactory.setLoginFailureDelay(1000)
+            connectionConfigFactory.setAnonymousLoginEnabled(anonymousAllowed)
+            serverFactory.connectionConfig = connectionConfigFactory.createConnectionConfig()
+
+            // Configure primary user with full access to external storage
             val user = BaseUser()
-            user.name = "android"
-            user.password = "android"
+            user.name = username
+            user.password = password
             user.homeDirectory = Environment.getExternalStorageDirectory().absolutePath
             user.authorities = listOf(WritePermission())
             serverFactory.userManager.save(user)
 
-            // Also allow anonymous access
-            val anonUser = BaseUser()
-            anonUser.name = "anonymous"
-            anonUser.password = ""
-            anonUser.homeDirectory = Environment.getExternalStorageDirectory().absolutePath
-            anonUser.authorities = listOf(WritePermission())
-            serverFactory.userManager.save(anonUser)
+            // Also allow anonymous access if requested
+            if (anonymousAllowed) {
+                val anonUser = BaseUser()
+                anonUser.name = "anonymous"
+                anonUser.password = ""
+                anonUser.homeDirectory = Environment.getExternalStorageDirectory().absolutePath
+                anonUser.authorities = listOf(WritePermission())
+                serverFactory.userManager.save(anonUser)
+            }
 
             // Register ftplet to track connections
             val ftplets = LinkedHashMap<String, org.apache.ftpserver.ftplet.Ftplet>()
@@ -142,7 +160,6 @@ class FtpServerService : Service() {
             ftpServer = serverFactory.createServer()
             ftpServer?.start()
 
-            val localIp = getWifiIpAddress()
             _serverState.value = ServerState.Running(localIp, FTP_PORT)
             nsdHelper?.registerService(FTP_PORT)
 
@@ -193,15 +210,25 @@ class FtpServerService : Service() {
             Log.e(TAG, "Error getting WiFi IP: ${e.message}")
         }
 
-        // Fallback: enumerate network interfaces
+        // Fallback: enumerate network interfaces prioritizing hotspot and wifi
         try {
             val interfaces = java.util.Collections.list(java.net.NetworkInterface.getNetworkInterfaces())
-            for (intf in interfaces) {
+            val prioritizedNames = listOf("wlan0", "wlan1", "ap0", "rndis0")
+            val sortedInterfaces = interfaces.sortedBy { intf ->
+                val index = prioritizedNames.indexOf(intf.name)
+                if (index != -1) index else prioritizedNames.size
+            }
+            for (intf in sortedInterfaces) {
+                if (intf.isLoopback || !intf.isUp) continue
                 val addrs = java.util.Collections.list(intf.inetAddresses)
                 for (addr in addrs) {
                     if (!addr.isLoopbackAddress) {
                         val sAddr = addr.hostAddress ?: continue
-                        if (sAddr.indexOf(':') < 0) return sAddr
+                        val isIPv4 = sAddr.indexOf(':') < 0
+                        if (isIPv4) {
+                            Log.d(TAG, "Found IP on interface ${intf.name}: $sAddr")
+                            return sAddr
+                        }
                     }
                 }
             }

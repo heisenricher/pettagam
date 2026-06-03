@@ -11,8 +11,8 @@ android {
         applicationId = "com.ftpsync.app"
         minSdk = 26
         targetSdk = 34
-        versionCode = 4
-        versionName = "3.1.0"
+        versionCode = 5
+        versionName = "3.2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
