@@ -1,6 +1,6 @@
 # FTP-SYNC (Pettagam)
 
-[Download APK](https://github.com/heisenricher/pettagam/releases/download/v3/app-release.apk)
+[Download APK](https://github.com/heisenricher/pettagam/releases/download/v3.1.0/app-release.apk)
 
 FTP-SYNC is a clean and lightweight Android application that lets you connect your phone to Windows Explorer over your local Wi-Fi. It uses a custom FTP server running directly on your device. It does not send your data to any cloud service. It is fully local and open source.
 
