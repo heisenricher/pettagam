@@ -46,14 +46,28 @@ class FtpServerService : Service() {
         private val _bytesTransferred = MutableStateFlow(0L)
         val bytesTransferred = _bytesTransferred.asStateFlow()
 
+        private val _transferLogs = MutableStateFlow<List<String>>(emptyList())
+        val transferLogs = _transferLogs.asStateFlow()
+
         fun resetStats() {
             _bytesTransferred.value = 0L
+        }
+
+        fun addTransferLog(message: String) {
+            val timestamp = java.text.SimpleDateFormat("HH:mm:ss", java.util.Locale.getDefault()).format(java.util.Date())
+            val entry = "[$timestamp] $message"
+            _transferLogs.value = (listOf(entry) + _transferLogs.value).take(30)
+        }
+
+        fun clearLogs() {
+            _transferLogs.value = emptyList()
         }
     }
 
     sealed class ServerState {
         object Stopped : ServerState()
         data class Running(val ip: String, val port: Int) : ServerState()
+        data class Error(val message: String) : ServerState()
     }
 
     override fun onCreate() {
@@ -137,8 +151,14 @@ class FtpServerService : Service() {
 
         } catch (e: Exception) {
             Log.e(TAG, "Failed to start FTP server: ${e.message}", e)
-            _serverState.value = ServerState.Stopped
-            updateNotification("Failed to start server")
+            val errorMsg = if (e.message?.contains("BindException", ignoreCase = true) == true || 
+                             e.cause?.message?.contains("BindException", ignoreCase = true) == true) {
+                "Port $FTP_PORT is already in use by another app"
+            } else {
+                e.message ?: "Unknown error occurred"
+            }
+            _serverState.value = ServerState.Error(errorMsg)
+            updateNotification("Failed to start server: $errorMsg")
         }
     }
 
@@ -210,13 +230,23 @@ class FtpServerService : Service() {
         }
 
         override fun onUploadEnd(session: FtpSession, request: FtpRequest): FtpletResult {
-            // Track approximate bytes (we don't have exact count from ftplet, but the server handles it)
+            val filename = request.argument?.substringAfterLast('/') ?: "unknown"
+            addTransferLog("Uploaded: $filename")
             Log.d(TAG, "Upload completed: ${request.argument}")
             return FtpletResult.DEFAULT
         }
 
         override fun onDownloadEnd(session: FtpSession, request: FtpRequest): FtpletResult {
+            val filename = request.argument?.substringAfterLast('/') ?: "unknown"
+            addTransferLog("Downloaded: $filename")
             Log.d(TAG, "Download completed: ${request.argument}")
+            return FtpletResult.DEFAULT
+        }
+
+        override fun onDeleteEnd(session: FtpSession, request: FtpRequest): FtpletResult {
+            val filename = request.argument?.substringAfterLast('/') ?: "unknown"
+            addTransferLog("Deleted: $filename")
+            Log.d(TAG, "Delete completed: ${request.argument}")
             return FtpletResult.DEFAULT
         }
     }
