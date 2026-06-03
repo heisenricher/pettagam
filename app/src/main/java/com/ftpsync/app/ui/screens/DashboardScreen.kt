@@ -60,7 +60,7 @@ fun DashboardScreen(
                 fontFamily = FontFamily.SansSerif
             )
             Text(
-                text = "Seamless Windows File Access",
+                text = "Local Windows File Access",
                 fontSize = 14.sp,
                 color = SlateGray,
                 fontFamily = FontFamily.SansSerif

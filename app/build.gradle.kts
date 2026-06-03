@@ -11,8 +11,8 @@ android {
         applicationId = "com.ftpsync.app"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 3
+        versionName = "3.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -45,6 +45,11 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/DEPENDENCIES"
+            excludes += "/META-INF/LICENSE"
+            excludes += "/META-INF/LICENSE.txt"
+            excludes += "/META-INF/NOTICE"
+            excludes += "/META-INF/NOTICE.txt"
         }
     }
 }
@@ -58,9 +63,12 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3:1.2.0")
-    
-    // Apache Commons Net for FTP server/client operations
-    implementation("commons-net:commons-net:3.10.0")
+
+    // Apache FtpServer - RFC-compliant FTP server
+    implementation("org.apache.ftpserver:ftpserver-core:1.2.1")
+
+    // SLF4J Android logger (required by Apache FtpServer / MINA)
+    implementation("org.slf4j:slf4j-android:1.7.36")
 
     // QR Code Generator
     implementation("com.google.zxing:core:3.5.3")

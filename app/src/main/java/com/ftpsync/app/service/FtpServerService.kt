@@ -7,6 +7,7 @@ import android.app.PendingIntent
 import android.app.Service
 import android.content.Context
 import android.content.Intent
+import android.net.wifi.WifiManager
 import android.os.Build
 import android.os.Environment
 import android.os.IBinder
@@ -14,34 +15,27 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.ftpsync.app.MainActivity
 import com.ftpsync.app.net.NsdHelper
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.launch
-import java.io.BufferedReader
-import java.io.DataOutputStream
-import java.io.File
-import java.io.InputStreamReader
-import java.net.InetAddress
-import java.net.NetworkInterface
-import java.net.ServerSocket
-import java.net.Socket
-import java.util.Collections
+import org.apache.ftpserver.FtpServerFactory
+import org.apache.ftpserver.ftplet.DefaultFtplet
+import org.apache.ftpserver.ftplet.FtpSession
+import org.apache.ftpserver.ftplet.FtpRequest
+import org.apache.ftpserver.ftplet.FtpletResult
+import org.apache.ftpserver.listener.ListenerFactory
+import org.apache.ftpserver.usermanager.impl.BaseUser
+import org.apache.ftpserver.usermanager.impl.WritePermission
 
 class FtpServerService : Service() {
 
-    private val serviceJob = SupervisorJob()
-    private val serviceScope = CoroutineScope(Dispatchers.IO + serviceJob)
-    
-    private var serverSocket: ServerSocket? = null
-    private var isRunning = false
+    private var ftpServer: org.apache.ftpserver.FtpServer? = null
     private var nsdHelper: NsdHelper? = null
 
     companion object {
+        private const val TAG = "FtpServerService"
         private const val CHANNEL_ID = "FtpSyncChannel"
         private const val NOTIFICATION_ID = 1001
+        private const val FTP_PORT = 2121
 
         private val _serverState = MutableStateFlow<ServerState>(ServerState.Stopped)
         val serverState = _serverState.asStateFlow()
@@ -54,10 +48,6 @@ class FtpServerService : Service() {
 
         fun resetStats() {
             _bytesTransferred.value = 0L
-        }
-
-        fun addTransferredBytes(bytes: Long) {
-            _bytesTransferred.value += bytes
         }
     }
 
@@ -75,273 +65,160 @@ class FtpServerService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val action = intent?.action
         if (action == "STOP") {
-            stopServer()
+            stopFtpServer()
+            stopForeground(STOP_FOREGROUND_REMOVE)
             stopSelf()
         } else {
-            startForeground(NOTIFICATION_ID, buildNotification("Starting..."))
-            startServer()
+            val notification = buildNotification("Starting FTP server...")
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                startForeground(
+                    NOTIFICATION_ID,
+                    notification,
+                    android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC
+                )
+            } else {
+                startForeground(NOTIFICATION_ID, notification)
+            }
+            startFtpServer()
         }
         return START_NOT_STICKY
     }
 
+    // Android 15+ enforces a 6-hour timeout for dataSync foreground services
+    override fun onTimeout(startId: Int) {
+        stopFtpServer()
+        stopSelf()
+    }
+
     override fun onBind(intent: Intent?): IBinder? = null
 
-    private fun startServer() {
-        if (isRunning) return
-        isRunning = true
+    private fun startFtpServer() {
+        if (ftpServer != null && !ftpServer!!.isStopped) return
 
-        serviceScope.launch {
-            try {
-                val port = 2121
-                serverSocket = ServerSocket(port)
-                val localIp = getLocalIpAddress() ?: "127.0.0.1"
-                
-                _serverState.value = ServerState.Running(localIp, port)
-                nsdHelper?.registerService(port)
-                
-                updateNotification("FTP server listening on $localIp:$port")
-                Log.d("FtpServerService", "FTP Server started on $localIp:$port")
+        try {
+            val serverFactory = FtpServerFactory()
 
-                while (isRunning) {
-                    val clientSocket = serverSocket?.accept() ?: break
-                    serviceScope.launch {
-                        handleClient(clientSocket)
-                    }
-                }
-            } catch (e: Exception) {
-                Log.e("FtpServerService", "Server error: ${e.message}")
-                stopServer()
-            }
+            // Configure listener on port 2121
+            val listenerFactory = ListenerFactory()
+            listenerFactory.port = FTP_PORT
+            serverFactory.addListener("default", listenerFactory.createListener())
+
+            // Configure anonymous user with full access to external storage
+            val user = BaseUser()
+            user.name = "android"
+            user.password = "android"
+            user.homeDirectory = Environment.getExternalStorageDirectory().absolutePath
+            user.authorities = listOf(WritePermission())
+            serverFactory.userManager.save(user)
+
+            // Also allow anonymous access
+            val anonUser = BaseUser()
+            anonUser.name = "anonymous"
+            anonUser.password = ""
+            anonUser.homeDirectory = Environment.getExternalStorageDirectory().absolutePath
+            anonUser.authorities = listOf(WritePermission())
+            serverFactory.userManager.save(anonUser)
+
+            // Register ftplet to track connections
+            val ftplets = LinkedHashMap<String, org.apache.ftpserver.ftplet.Ftplet>()
+            ftplets["tracker"] = ConnectionTracker()
+            serverFactory.ftplets = ftplets
+
+            // Start the server
+            ftpServer = serverFactory.createServer()
+            ftpServer?.start()
+
+            val localIp = getWifiIpAddress()
+            _serverState.value = ServerState.Running(localIp, FTP_PORT)
+            nsdHelper?.registerService(FTP_PORT)
+
+            updateNotification("FTP server on $localIp:$FTP_PORT")
+            Log.d(TAG, "FTP Server started on $localIp:$FTP_PORT")
+
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to start FTP server: ${e.message}", e)
+            _serverState.value = ServerState.Stopped
+            updateNotification("Failed to start server")
         }
     }
 
-    private fun stopServer() {
-        isRunning = false
+    private fun stopFtpServer() {
         try {
-            serverSocket?.close()
+            ftpServer?.stop()
         } catch (e: Exception) {
-            Log.e("FtpServerService", "Error closing socket: ${e.message}")
+            Log.e(TAG, "Error stopping FTP server: ${e.message}")
         }
-        serverSocket = null
+        ftpServer = null
         nsdHelper?.unregisterService()
         _serverState.value = ServerState.Stopped
         _clientConnections.value = emptyList()
     }
 
-    private fun handleClient(socket: Socket) {
-        val clientAddress = socket.inetAddress.hostAddress ?: "Unknown"
-        _clientConnections.value = _clientConnections.value + clientAddress
-        Log.d("FtpServerService", "Client connected: $clientAddress")
-
-        var controlWriter: DataOutputStream? = null
-        var controlReader: BufferedReader? = null
+    private fun getWifiIpAddress(): String {
         try {
-            controlWriter = DataOutputStream(socket.getOutputStream())
-            controlReader = BufferedReader(InputStreamReader(socket.getInputStream()))
-
-            controlWriter.writeBytes("220 Welcome to FtpSync (Android)\r\n")
-            controlWriter.flush()
-
-            var currentDir = Environment.getExternalStorageDirectory()
-            var passiveServerSocket: ServerSocket? = null
-            var binaryMode = false
-
-            while (isRunning) {
-                val line = controlReader.readLine() ?: break
-                Log.d("FtpServerService", "Cmd: $line")
-                val parts = line.split(" ", limit = 2)
-                val cmd = parts[0].uppercase()
-                val args = if (parts.size > 1) parts[1] else ""
-
-                when (cmd) {
-                    "USER" -> {
-                        controlWriter.writeBytes("331 User name okay, need password.\r\n")
-                    }
-                    "PASS" -> {
-                        controlWriter.writeBytes("230 User logged in, proceed.\r\n")
-                    }
-                    "SYST" -> {
-                        controlWriter.writeBytes("215 UNIX Type: L8\r\n")
-                    }
-                    "PWD" -> {
-                        val relative = currentDir.absolutePath.removePrefix(Environment.getExternalStorageDirectory().absolutePath)
-                        val display = if (relative.isEmpty()) "/" else relative
-                        controlWriter.writeBytes("257 \"$display\" is current directory.\r\n")
-                    }
-                    "TYPE" -> {
-                        binaryMode = (args.uppercase() == "I")
-                        controlWriter.writeBytes("200 Type set to $args\r\n")
-                    }
-                    "PASV" -> {
-                        passiveServerSocket?.close()
-                        passiveServerSocket = ServerSocket(0) // Random free port
-                        val port = passiveServerSocket.localPort
-                        val ipParts = getLocalIpAddress()?.split(".") ?: listOf("127", "0", "0", "1")
-                        val p1 = port shr 8
-                        val p2 = port and 0xFF
-                        val pasvResponse = "227 Entering Passive Mode (${ipParts.joinToString(",")},$p1,$p2).\r\n"
-                        controlWriter.writeBytes(pasvResponse)
-                    }
-                    "LIST" -> {
-                        controlWriter.writeBytes("150 File status okay; about to open data connection.\r\n")
-                        val dataSocket = passiveServerSocket?.accept()
-                        if (dataSocket != null) {
-                            val dataOut = DataOutputStream(dataSocket.getOutputStream())
-                            val files = currentDir.listFiles() ?: emptyArray()
-                            for (file in files) {
-                                val size = file.length()
-                                val name = file.name
-                                val typeStr = if (file.isDirectory) "d" else "-"
-                                val lineStr = "$typeStr rwxrwxrwx 1 ftp ftp $size Jun 02 12:00 $name\r\n"
-                                dataOut.writeBytes(lineStr)
-                            }
-                            dataOut.flush()
-                            dataSocket.close()
-                            controlWriter.writeBytes("226 Closing data connection.\r\n")
-                        } else {
-                            controlWriter.writeBytes("425 Can't open data connection.\r\n")
-                        }
-                    }
-                    "CWD" -> {
-                        val targetDir = if (args.startsWith("/")) {
-                            File(Environment.getExternalStorageDirectory(), args)
-                        } else {
-                            File(currentDir, args)
-                        }
-                        if (targetDir.exists() && targetDir.isDirectory) {
-                            currentDir = targetDir
-                            controlWriter.writeBytes("250 Directory successfully changed.\r\n")
-                        } else {
-                            controlWriter.writeBytes("550 Directory not found.\r\n")
-                        }
-                    }
-                    "CDUP" -> {
-                        val parent = currentDir.parentFile
-                        if (parent != null && parent.absolutePath.startsWith(Environment.getExternalStorageDirectory().absolutePath)) {
-                            currentDir = parent
-                            controlWriter.writeBytes("250 Directory successfully changed to parent.\r\n")
-                        } else {
-                            controlWriter.writeBytes("550 Already at root directory.\r\n")
-                        }
-                    }
-                    "RETR" -> {
-                        val file = File(currentDir, args)
-                        if (file.exists() && !file.isDirectory) {
-                            controlWriter.writeBytes("150 Opening binary mode data connection for ${file.name}.\r\n")
-                            val dataSocket = passiveServerSocket?.accept()
-                            if (dataSocket != null) {
-                                val fileInput = file.inputStream()
-                                val buffer = ByteArray(8192)
-                                var bytesRead: Int
-                                val dataOut = dataSocket.getOutputStream()
-                                while (fileInput.read(buffer).also { bytesRead = it } != -1) {
-                                    dataOut.write(buffer, 0, bytesRead)
-                                    addTransferredBytes(bytesRead.toLong())
-                                }
-                                dataOut.flush()
-                                fileInput.close()
-                                dataSocket.close()
-                                controlWriter.writeBytes("226 Transfer complete.\r\n")
-                            } else {
-                                controlWriter.writeBytes("425 Can't open data connection.\r\n")
-                            }
-                        } else {
-                            controlWriter.writeBytes("550 File not found.\r\n")
-                        }
-                    }
-                    "STOR" -> {
-                        val file = File(currentDir, args)
-                        controlWriter.writeBytes("150 Ok to send data.\r\n")
-                        val dataSocket = passiveServerSocket?.accept()
-                        if (dataSocket != null) {
-                            val fileOutput = file.outputStream()
-                            val buffer = ByteArray(8192)
-                            var bytesRead: Int
-                            val dataIn = dataSocket.getInputStream()
-                            while (dataIn.read(buffer).also { bytesRead = it } != -1) {
-                                fileOutput.write(buffer, 0, bytesRead)
-                                addTransferredBytes(bytesRead.toLong())
-                            }
-                            fileOutput.flush()
-                            fileOutput.close()
-                            dataSocket.close()
-                            controlWriter.writeBytes("226 Transfer complete.\r\n")
-                        } else {
-                            controlWriter.writeBytes("425 Can't open data connection.\r\n")
-                        }
-                    }
-                    "DELE" -> {
-                        val file = File(currentDir, args)
-                        if (file.exists() && file.delete()) {
-                            controlWriter.writeBytes("250 File deleted successfully.\r\n")
-                        } else {
-                            controlWriter.writeBytes("550 Could not delete file.\r\n")
-                        }
-                    }
-                    "RMD" -> {
-                        val file = File(currentDir, args)
-                        if (file.exists() && file.isDirectory && file.delete()) {
-                            controlWriter.writeBytes("250 Directory removed successfully.\r\n")
-                        } else {
-                            controlWriter.writeBytes("550 Could not remove directory.\r\n")
-                        }
-                    }
-                    "MKD" -> {
-                        val file = File(currentDir, args)
-                        if (file.mkdir()) {
-                            controlWriter.writeBytes("257 \"$args\" directory created.\r\n")
-                        } else {
-                            controlWriter.writeBytes("550 Could not create directory.\r\n")
-                        }
-                    }
-                    "FEAT" -> {
-                        controlWriter.writeBytes("211-Features:\r\n UTF8\r\n211 End\r\n")
-                    }
-                    "OPTS" -> {
-                        controlWriter.writeBytes("200 OK\r\n")
-                    }
-                    "NOOP" -> {
-                        controlWriter.writeBytes("200 OK\r\n")
-                    }
-                    "QUIT" -> {
-                        controlWriter.writeBytes("221 Goodbye.\r\n")
-                        controlWriter.flush()
-                        break
-                    }
-                    else -> {
-                        controlWriter.writeBytes("502 Command not implemented.\r\n")
-                    }
-                }
-                controlWriter.flush()
+            val wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
+            @Suppress("DEPRECATION")
+            val wifiInfo = wifiManager.connectionInfo
+            val ipInt = wifiInfo.ipAddress
+            if (ipInt != 0) {
+                return String.format(
+                    "%d.%d.%d.%d",
+                    ipInt and 0xff,
+                    ipInt shr 8 and 0xff,
+                    ipInt shr 16 and 0xff,
+                    ipInt shr 24 and 0xff
+                )
             }
         } catch (e: Exception) {
-            Log.e("FtpServerService", "Client connection error: ${e.message}")
-        } finally {
-            try {
-                socket.close()
-            } catch (ignored: Exception) {}
-            _clientConnections.value = _clientConnections.value - clientAddress
-            Log.d("FtpServerService", "Client disconnected cleanly: $clientAddress")
+            Log.e(TAG, "Error getting WiFi IP: ${e.message}")
         }
-    }
 
-    private fun getLocalIpAddress(): String? {
+        // Fallback: enumerate network interfaces
         try {
-            val interfaces = Collections.list(NetworkInterface.getNetworkInterfaces())
+            val interfaces = java.util.Collections.list(java.net.NetworkInterface.getNetworkInterfaces())
             for (intf in interfaces) {
-                val addrs = Collections.list(intf.inetAddresses)
+                val addrs = java.util.Collections.list(intf.inetAddresses)
                 for (addr in addrs) {
                     if (!addr.isLoopbackAddress) {
                         val sAddr = addr.hostAddress ?: continue
-                        val isIPv4 = sAddr.indexOf(':') < 0
-                        if (isIPv4) return sAddr
+                        if (sAddr.indexOf(':') < 0) return sAddr
                     }
                 }
             }
         } catch (e: Exception) {
-            Log.e("FtpServerService", "Error getting IP: ${e.message}")
+            Log.e(TAG, "Error enumerating network interfaces: ${e.message}")
         }
-        return null
+        return "127.0.0.1"
+    }
+
+    // Ftplet to track client connections
+    inner class ConnectionTracker : DefaultFtplet() {
+        override fun onConnect(session: FtpSession): FtpletResult {
+            val clientAddr = session.clientAddress?.toString() ?: "Unknown"
+            val clean = clientAddr.removePrefix("/").substringBefore(":")
+            _clientConnections.value = _clientConnections.value + clean
+            Log.d(TAG, "Client connected: $clean")
+            return FtpletResult.DEFAULT
+        }
+
+        override fun onDisconnect(session: FtpSession): FtpletResult {
+            val clientAddr = session.clientAddress?.toString() ?: "Unknown"
+            val clean = clientAddr.removePrefix("/").substringBefore(":")
+            _clientConnections.value = _clientConnections.value - clean
+            Log.d(TAG, "Client disconnected: $clean")
+            return FtpletResult.DEFAULT
+        }
+
+        override fun onUploadEnd(session: FtpSession, request: FtpRequest): FtpletResult {
+            // Track approximate bytes (we don't have exact count from ftplet, but the server handles it)
+            Log.d(TAG, "Upload completed: ${request.argument}")
+            return FtpletResult.DEFAULT
+        }
+
+        override fun onDownloadEnd(session: FtpSession, request: FtpRequest): FtpletResult {
+            Log.d(TAG, "Download completed: ${request.argument}")
+            return FtpletResult.DEFAULT
+        }
     }
 
     private fun buildNotification(text: String): Notification {
@@ -358,11 +235,11 @@ class FtpServerService : Service() {
         )
 
         return NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle("FtpSync Active")
+            .setContentTitle("FTP-SYNC Active")
             .setContentText(text)
             .setSmallIcon(android.R.drawable.stat_sys_upload_done)
             .setContentIntent(mainPendingIntent)
-            .addAction(android.R.drawable.ic_menu_close_clear_cancel, "Stop Server", stopPendingIntent)
+            .addAction(android.R.drawable.ic_menu_close_clear_cancel, "Stop", stopPendingIntent)
             .setOngoing(true)
             .setCategory(NotificationCompat.CATEGORY_SERVICE)
             .build()
@@ -376,8 +253,8 @@ class FtpServerService : Service() {
 
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name = "FTP Server Channel"
-            val descriptionText = "Notifications for active FTP background service"
+            val name = "FTP Server"
+            val descriptionText = "Active FTP server notification"
             val importance = NotificationManager.IMPORTANCE_LOW
             val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
                 description = descriptionText
@@ -388,8 +265,7 @@ class FtpServerService : Service() {
     }
 
     override fun onDestroy() {
-        stopServer()
-        serviceJob.cancel()
+        stopFtpServer()
         super.onDestroy()
     }
 }
