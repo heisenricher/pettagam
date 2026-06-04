@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cricket-nrr"
-version = "0.1.0"
-description = "Cricket NRR, DLS par scores, and tournament standings — done correctly"
+version = "0.1.1"
+description = "Cricket NRR, DLS par scores, and tournament standings, done correctly"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
