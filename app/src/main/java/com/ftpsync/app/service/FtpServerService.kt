@@ -121,7 +121,6 @@ class FtpServerService : Service() {
             // Configure listener on port 2121
             val listenerFactory = ListenerFactory()
             listenerFactory.port = FTP_PORT
-            listenerFactory.setServerAddress(localIp)
             listenerFactory.setIdleTimeout(300) // 5 minutes session idle timeout
             serverFactory.addListener("default", listenerFactory.createListener())
 

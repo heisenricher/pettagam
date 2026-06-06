@@ -27,6 +27,10 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.EaseOutQuart
 import com.ftpsync.app.service.FtpServerService
 import com.ftpsync.app.ui.theme.*
 import com.google.zxing.BarcodeFormat
@@ -46,53 +50,89 @@ fun DashboardScreen(
     val isError = serverState is FtpServerService.ServerState.Error
     val errorMessage = (serverState as? FtpServerService.ServerState.Error)?.message ?: ""
 
-    val ipAddress = (serverState as? FtpServerService.ServerState.Running)?.ip ?: ""
-    val port = (serverState as? FtpServerService.ServerState.Running)?.port ?: 2121
-    val ftpUri = if (isRunning) "ftp://$ipAddress:$port" else ""
-
     val context = LocalContext.current
     val prefs = remember { context.getSharedPreferences("ftp_settings", Context.MODE_PRIVATE) }
-    
+
     var username by remember { mutableStateOf(prefs.getString("username", "android") ?: "android") }
     var password by remember { mutableStateOf(prefs.getString("password", "android") ?: "android") }
     var anonymousAllowed by remember { mutableStateOf(prefs.getBoolean("anonymous_allowed", false)) }
 
+    // Read active IP address. If running, use reported IP; if stopped, scan interfaces.
+    val activeIp = if (isRunning) {
+        (serverState as FtpServerService.ServerState.Running).ip
+    } else {
+        remember(serverState) { getLocalNetworkIp() }
+    }
+    val port = if (isRunning) (serverState as FtpServerService.ServerState.Running).port else 2121
+    val isOffline = activeIp == "127.0.0.1"
+    val ftpUri = if (isRunning && !isOffline) "ftp://$activeIp:$port" else ""
+
+    // Eased animations for Japandi transitions (600ms, EaseOutQuart)
+    val animatedCardHeight by animateDpAsState(
+        targetValue = when {
+            isRunning -> 220.dp
+            else -> 300.dp
+        },
+        animationSpec = tween(durationMillis = 600, easing = EaseOutQuart)
+    )
+
+    val statusBgColor by animateColorAsState(
+        targetValue = when {
+            isRunning -> SageLight
+            isError || isOffline -> CrimsonLight
+            else -> ClayLight
+        },
+        animationSpec = tween(durationMillis = 600, easing = EaseOutQuart)
+    )
+
+    val statusTextColor by animateColorAsState(
+        targetValue = when {
+            isRunning -> ForestGreen
+            isError || isOffline -> CrimsonWarning
+            else -> ClayAccent
+        },
+        animationSpec = tween(durationMillis = 600, easing = EaseOutQuart)
+    )
+
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(OffWhite)
+            .background(JapandiBg)
             .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween
     ) {
         // App Header
         Column(
-            modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp),
             horizontalAlignment = Alignment.Start
         ) {
             Text(
                 text = "FTP-SYNC",
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
-                color = DarkText,
+                color = DarkCharcoal,
                 fontFamily = FontFamily.SansSerif
             )
             Text(
                 text = "Local Windows File Access",
                 fontSize = 14.sp,
-                color = SlateGray,
+                color = SandMuted,
                 fontFamily = FontFamily.SansSerif
             )
         }
 
-        // Connection Card
+        // Connection Card (Pebbled + Linen Border)
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 16.dp)
-                .then(if (isRunning) Modifier.height(210.dp) else Modifier.weight(1f)),
-            colors = CardDefaults.cardColors(containerColor = PureWhite),
-            shape = RoundedCornerShape(20.dp)
+                .padding(vertical = 12.dp)
+                .height(animatedCardHeight)
+                .border(BorderStroke(1.dp, LinenBorder), shape = RoundedCornerShape(24.dp)),
+            colors = CardDefaults.cardColors(containerColor = JapandiSurface),
+            shape = RoundedCornerShape(24.dp)
         ) {
             Column(
                 modifier = Modifier
@@ -104,70 +144,61 @@ fun DashboardScreen(
                 // Status Indicator
                 Box(
                     modifier = Modifier
-                        .clip(RoundedCornerShape(50.dp))
-                        .background(
-                            when {
-                                isRunning -> ActiveGreenLight
-                                isError -> WarningRed.copy(alpha = 0.1f)
-                                else -> PrimaryBlueLight
-                            }
-                        )
-                        .padding(horizontal = 16.dp, vertical = 6.dp)
+                        .clip(RoundedCornerShape(24.dp))
+                        .background(statusBgColor)
+                        .padding(horizontal = 14.dp, vertical = 6.dp)
                 ) {
                     Text(
                         text = when {
                             isRunning -> "SERVER ACTIVE"
                             isError -> "SERVER ERROR"
-                            else -> "SERVER STOPPED"
+                            isOffline -> "OFFLINE"
+                            else -> "READY TO SHARE"
                         },
-                        color = when {
-                            isRunning -> ActiveGreen
-                            isError -> WarningRed
-                            else -> PrimaryBlue
-                        },
+                        color = statusTextColor,
                         fontWeight = FontWeight.Bold,
-                        fontSize = 11.sp
+                        fontSize = 10.sp
                     )
                 }
 
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(12.dp))
 
                 // Connection details or errors
                 if (isRunning) {
                     Text(
                         text = ftpUri,
-                        fontSize = 20.sp,
+                        fontSize = 18.sp,
                         fontWeight = FontWeight.Bold,
-                        color = PrimaryBlue,
+                        color = ForestGreen,
                         fontFamily = FontFamily.Monospace
                     )
-                    Spacer(modifier = Modifier.height(4.dp))
+                    Spacer(modifier = Modifier.height(2.dp))
                     Text(
                         text = "Enter this URL in Windows File Explorer",
                         fontSize = 11.sp,
-                        color = SlateGray
+                        color = SandMuted
                     )
                     
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Spacer(modifier = Modifier.height(6.dp))
                     
                     if (!anonymousAllowed) {
                         Text(
                             text = "Login: $username / Pass: $password",
-                            fontSize = 12.sp,
+                            fontSize = 11.sp,
                             fontWeight = FontWeight.Medium,
-                            color = DarkText,
+                            color = DarkCharcoal,
                             fontFamily = FontFamily.Monospace
                         )
                     } else {
                         Text(
                             text = "Anonymous Login Enabled",
-                            fontSize = 12.sp,
+                            fontSize = 11.sp,
                             fontWeight = FontWeight.Medium,
-                            color = ActiveGreen
+                            color = ForestGreen
                         )
                     }
                     
-                    Spacer(modifier = Modifier.height(10.dp))
+                    Spacer(modifier = Modifier.height(8.dp))
 
                     // QR Code
                     val qrBitmap = remember(ftpUri) { generateQrCode(ftpUri) }
@@ -176,40 +207,58 @@ fun DashboardScreen(
                             bitmap = it.asImageBitmap(),
                             contentDescription = "Connection QR Code",
                             modifier = Modifier
-                                .size(90.dp)
-                                .border(1.dp, LightGray, RoundedCornerShape(8.dp))
-                                .padding(4.dp)
+                                .size(80.dp)
+                                .border(1.dp, LinenBorder, RoundedCornerShape(8.dp))
+                                .padding(2.dp)
                         )
                     }
                 } else if (isError) {
                     Text(
                         text = errorMessage,
-                        fontSize = 16.sp,
+                        fontSize = 15.sp,
                         fontWeight = FontWeight.Bold,
-                        color = WarningRed,
+                        color = CrimsonWarning,
                         fontFamily = FontFamily.SansSerif,
                         modifier = Modifier.padding(horizontal = 12.dp),
                         textAlign = androidx.compose.ui.text.style.TextAlign.Center
                     )
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Spacer(modifier = Modifier.height(6.dp))
                     Text(
                         text = "Make sure no other FTP server is running on port $port and check your connection.",
-                        fontSize = 12.sp,
-                        color = SlateGray,
+                        fontSize = 11.sp,
+                        color = SandMuted,
                         modifier = Modifier.padding(horizontal = 12.dp),
                         textAlign = androidx.compose.ui.text.style.TextAlign.Center
                     )
+                } else if (isOffline) {
+                    Text(
+                        text = "No local network found",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = CrimsonWarning,
+                        fontFamily = FontFamily.SansSerif
+                    )
+                    Spacer(modifier = Modifier.height(6.dp))
+                    Text(
+                        text = "Please connect to Wi-Fi or turn on Mobile Hotspot to share files with your computer.",
+                        fontSize = 11.sp,
+                        color = SandMuted,
+                        textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                        modifier = Modifier.padding(horizontal = 12.dp)
+                    )
                 } else {
                     Text(
-                        text = "Not hosting",
+                        text = "ftp://$activeIp:$port",
                         fontSize = 18.sp,
-                        color = SlateGray
+                        fontWeight = FontWeight.Bold,
+                        color = ClayAccent,
+                        fontFamily = FontFamily.Monospace
                     )
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Spacer(modifier = Modifier.height(4.dp))
                     Text(
-                        text = "Tap start to enable file sharing",
-                        fontSize = 12.sp,
-                        color = SlateGray
+                        text = "Tap start to share folders with your computer",
+                        fontSize = 11.sp,
+                        color = SandMuted
                     )
                 }
             }
@@ -228,34 +277,40 @@ fun DashboardScreen(
                 ) {
                     // Transferred Card
                     Card(
-                        modifier = Modifier.weight(1f).padding(end = 8.dp),
-                        colors = CardDefaults.cardColors(containerColor = PureWhite),
-                        shape = RoundedCornerShape(12.dp)
+                        modifier = Modifier
+                            .weight(1f)
+                            .padding(end = 8.dp)
+                            .border(BorderStroke(1.dp, LinenBorder), shape = RoundedCornerShape(24.dp)),
+                        colors = CardDefaults.cardColors(containerColor = JapandiSurface),
+                        shape = RoundedCornerShape(24.dp)
                     ) {
                         Column(modifier = Modifier.padding(12.dp)) {
-                            Text("Data Transferred", fontSize = 11.sp, color = SlateGray)
+                            Text("Data Transferred", fontSize = 11.sp, color = SandMuted)
                             Text(
                                 text = formatBytes(bytesTransferred),
                                 fontSize = 15.sp,
                                 fontWeight = FontWeight.Bold,
-                                color = DarkText
+                                color = DarkCharcoal
                             )
                         }
                     }
 
                     // Connected Clients Card
                     Card(
-                        modifier = Modifier.weight(1f).padding(start = 8.dp),
-                        colors = CardDefaults.cardColors(containerColor = PureWhite),
-                        shape = RoundedCornerShape(12.dp)
+                        modifier = Modifier
+                            .weight(1f)
+                            .padding(start = 8.dp)
+                            .border(BorderStroke(1.dp, LinenBorder), shape = RoundedCornerShape(24.dp)),
+                        colors = CardDefaults.cardColors(containerColor = JapandiSurface),
+                        shape = RoundedCornerShape(24.dp)
                     ) {
                         Column(modifier = Modifier.padding(12.dp)) {
-                            Text("Active Connections", fontSize = 11.sp, color = SlateGray)
+                            Text("Active Connections", fontSize = 11.sp, color = SandMuted)
                             Text(
                                 text = "${clients.size} client(s)",
                                 fontSize = 15.sp,
                                 fontWeight = FontWeight.Bold,
-                                color = DarkText
+                                color = DarkCharcoal
                             )
                         }
                     }
@@ -270,9 +325,9 @@ fun DashboardScreen(
                     .fillMaxWidth()
                     .height(110.dp)
                     .padding(bottom = 8.dp)
-                    .shadow(2.dp, shape = RoundedCornerShape(16.dp), ambientColor = SlateGray),
-                colors = CardDefaults.cardColors(containerColor = PureWhite),
-                shape = RoundedCornerShape(16.dp)
+                    .border(BorderStroke(1.dp, LinenBorder), shape = RoundedCornerShape(24.dp)),
+                colors = CardDefaults.cardColors(containerColor = JapandiSurface),
+                shape = RoundedCornerShape(24.dp)
             ) {
                 Column(
                     modifier = Modifier.padding(12.dp)
@@ -286,14 +341,14 @@ fun DashboardScreen(
                             text = "Activity Log",
                             fontSize = 12.sp,
                             fontWeight = FontWeight.Bold,
-                            color = DarkText
+                            color = DarkCharcoal
                         )
                         TextButton(
                             onClick = { FtpServerService.clearLogs() },
                             contentPadding = PaddingValues(0.dp),
                             modifier = Modifier.height(20.dp)
                         ) {
-                            Text("Clear", fontSize = 10.sp, color = WarningRed)
+                            Text("Clear", fontSize = 10.sp, color = CrimsonWarning)
                         }
                     }
                     Spacer(modifier = Modifier.height(2.dp))
@@ -306,7 +361,7 @@ fun DashboardScreen(
                                 text = log,
                                 fontSize = 10.sp,
                                 fontFamily = FontFamily.Monospace,
-                                color = DarkText
+                                color = DarkCharcoal
                             )
                         }
                     }
@@ -325,9 +380,9 @@ fun DashboardScreen(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 12.dp)
-                .shadow(2.dp, shape = RoundedCornerShape(16.dp), ambientColor = SlateGray),
-            colors = CardDefaults.cardColors(containerColor = PureWhite),
-            shape = RoundedCornerShape(16.dp)
+                .border(BorderStroke(1.dp, LinenBorder), shape = RoundedCornerShape(24.dp)),
+            colors = CardDefaults.cardColors(containerColor = JapandiSurface),
+            shape = RoundedCornerShape(24.dp)
         ) {
             Column(
                 modifier = Modifier.padding(12.dp)
@@ -341,27 +396,30 @@ fun DashboardScreen(
                         text = "Device Storage",
                         fontSize = 13.sp,
                         fontWeight = FontWeight.Bold,
-                        color = DarkText
+                        color = DarkCharcoal
                     )
                     Text(
                         text = String.format(Locale.US, "%.2f GB free", freeGb),
                         fontSize = 11.sp,
-                        color = PrimaryBlue,
+                        color = ClayAccent,
                         fontWeight = FontWeight.Medium
                     )
                 }
                 Spacer(modifier = Modifier.height(6.dp))
                 LinearProgressIndicator(
                     progress = { percentUsed },
-                    modifier = Modifier.fillMaxWidth().height(6.dp).clip(RoundedCornerShape(3.dp)),
-                    color = PrimaryBlue,
-                    trackColor = LightGray
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(6.dp)
+                        .clip(RoundedCornerShape(3.dp)),
+                    color = ClayAccent,
+                    trackColor = LinenBorder
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
                     text = String.format(Locale.US, "%.2f GB used of %.2f GB total", usedGb, totalGb),
                     fontSize = 10.sp,
-                    color = SlateGray
+                    color = SandMuted
                 )
             }
         }
@@ -373,9 +431,9 @@ fun DashboardScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 12.dp)
-                    .shadow(2.dp, shape = RoundedCornerShape(16.dp), ambientColor = SlateGray),
-                colors = CardDefaults.cardColors(containerColor = PureWhite),
-                shape = RoundedCornerShape(16.dp)
+                    .border(BorderStroke(1.dp, LinenBorder), shape = RoundedCornerShape(24.dp)),
+                colors = CardDefaults.cardColors(containerColor = JapandiSurface),
+                shape = RoundedCornerShape(24.dp)
             ) {
                 Column(
                     modifier = Modifier.padding(16.dp)
@@ -391,12 +449,12 @@ fun DashboardScreen(
                             text = "Access Settings",
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold,
-                            color = DarkText
+                            color = DarkCharcoal
                         )
                         Text(
                             text = if (isSettingsExpanded) "Collapse" else "Configure",
                             fontSize = 12.sp,
-                            color = PrimaryBlue,
+                            color = ForestGreen,
                             fontWeight = FontWeight.Medium
                         )
                     }
@@ -412,7 +470,15 @@ fun DashboardScreen(
                             },
                             label = { Text("Username") },
                             modifier = Modifier.fillMaxWidth(),
-                            singleLine = true
+                            singleLine = true,
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedBorderColor = ForestGreen,
+                                unfocusedBorderColor = LinenBorder,
+                                focusedLabelColor = ForestGreen,
+                                unfocusedLabelColor = SandMuted,
+                                focusedTextColor = DarkCharcoal,
+                                unfocusedTextColor = DarkCharcoal
+                            )
                         )
 
                         Spacer(modifier = Modifier.height(12.dp))
@@ -425,7 +491,15 @@ fun DashboardScreen(
                             },
                             label = { Text("Password") },
                             modifier = Modifier.fillMaxWidth(),
-                            singleLine = true
+                            singleLine = true,
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedBorderColor = ForestGreen,
+                                unfocusedBorderColor = LinenBorder,
+                                focusedLabelColor = ForestGreen,
+                                unfocusedLabelColor = SandMuted,
+                                focusedTextColor = DarkCharcoal,
+                                unfocusedTextColor = DarkCharcoal
+                            )
                         )
 
                         Spacer(modifier = Modifier.height(12.dp))
@@ -440,12 +514,12 @@ fun DashboardScreen(
                                     text = "Allow Anonymous Login",
                                     fontSize = 13.sp,
                                     fontWeight = FontWeight.Medium,
-                                    color = DarkText
+                                    color = DarkCharcoal
                                 )
                                 Text(
                                     text = "Lets PC connect without password",
                                     fontSize = 11.sp,
-                                    color = SlateGray
+                                    color = SandMuted
                                 )
                             }
                             Switch(
@@ -453,7 +527,13 @@ fun DashboardScreen(
                                 onCheckedChange = {
                                     anonymousAllowed = it
                                     prefs.edit().putBoolean("anonymous_allowed", it).apply()
-                                }
+                                },
+                                colors = SwitchDefaults.colors(
+                                    checkedThumbColor = JapandiSurface,
+                                    checkedTrackColor = ForestGreen,
+                                    uncheckedThumbColor = SandMuted,
+                                    uncheckedTrackColor = LinenBorder
+                                )
                             )
                         }
                     }
@@ -463,16 +543,18 @@ fun DashboardScreen(
 
         // Action Toggles
         Row(
-            modifier = Modifier.fillMaxWidth().padding(bottom = 4.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 4.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             if (isRunning) {
                 OutlinedButton(
                     onClick = { FtpServerService.resetStats() },
                     modifier = Modifier.weight(1f),
-                    shape = RoundedCornerShape(12.dp),
-                    colors = ButtonDefaults.outlinedButtonColors(contentColor = WarningRed),
-                    border = BorderStroke(1.dp, WarningRed.copy(alpha = 0.5f))
+                    shape = RoundedCornerShape(24.dp),
+                    colors = ButtonDefaults.outlinedButtonColors(contentColor = CrimsonWarning),
+                    border = BorderStroke(1.dp, CrimsonWarning.copy(alpha = 0.5f))
                 ) {
                     Text("Reset Stats")
                 }
@@ -481,10 +563,12 @@ fun DashboardScreen(
             Button(
                 onClick = { onToggleServer(!isRunning) },
                 modifier = Modifier.weight(if (isRunning) 2f else 1f),
-                shape = RoundedCornerShape(12.dp),
+                shape = RoundedCornerShape(24.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = if (isRunning) WarningRed else PrimaryBlue
-                )
+                    containerColor = if (isRunning) CrimsonWarning else ForestGreen,
+                    contentColor = JapandiSurface
+                ),
+                enabled = !isOffline || isRunning
             ) {
                 Text(
                     text = if (isRunning) "Stop Share" else "Start Sharing",
@@ -540,4 +624,29 @@ private fun getStorageInfo(): StorageInfo {
     } catch (e: Exception) {
         StorageInfo(0L, 0L, 0L)
     }
+}
+
+private fun getLocalNetworkIp(): String {
+    try {
+        val interfaces = java.util.Collections.list(java.net.NetworkInterface.getNetworkInterfaces())
+        val prioritizedNames = listOf("wlan0", "wlan1", "ap0", "rndis0")
+        val sortedInterfaces = interfaces.sortedBy { intf ->
+            val index = prioritizedNames.indexOf(intf.name)
+            if (index != -1) index else prioritizedNames.size
+        }
+        for (intf in sortedInterfaces) {
+            if (intf.isLoopback || !intf.isUp) continue
+            val addrs = java.util.Collections.list(intf.inetAddresses)
+            for (addr in addrs) {
+                if (!addr.isLoopbackAddress) {
+                    val sAddr = addr.hostAddress ?: continue
+                    val isIPv4 = sAddr.indexOf(':') < 0
+                    if (isIPv4) return sAddr
+                }
+            }
+        }
+    } catch (e: Exception) {
+        // Ignore
+    }
+    return "127.0.0.1"
 }

@@ -5,16 +5,16 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 
 private val LightColorScheme = lightColorScheme(
-    primary = PrimaryBlue,
-    onPrimary = PureWhite,
-    primaryContainer = PrimaryBlueLight,
-    onPrimaryContainer = PrimaryBlue,
-    background = OffWhite,
-    onBackground = DarkText,
-    surface = PureWhite,
-    onSurface = DarkText,
-    surfaceVariant = LightGray,
-    onSurfaceVariant = SlateGray
+    primary = ForestGreen,
+    onPrimary = JapandiSurface,
+    primaryContainer = SageLight,
+    onPrimaryContainer = ForestGreen,
+    background = JapandiBg,
+    onBackground = DarkCharcoal,
+    surface = JapandiSurface,
+    onSurface = DarkCharcoal,
+    surfaceVariant = LinenBorder,
+    onSurfaceVariant = SandMuted
 )
 
 @Composable
